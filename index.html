@@ -718,7 +718,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  417
+                  407
                 </span>
               
 
@@ -769,7 +769,7 @@
 <h2 id="去除单位产生式"><a href="#去除单位产生式" class="headerlink" title="去除单位产生式"></a>去除单位产生式</h2><ol>
 <li><p>找单位产生式，求出所有单位对</p>
 </li>
-<li><p>对于每个单位对(A,B)，把所有的产生式<br>$$<br>A\rightarrow B<br>$$<br>加入产生式集合P，其中<br>$$<br>B\rightarrow \alpha<br>$$<br>是P中的非单位产生式。（非形式地说 就是把所有单位产生式的“中介符号”消除掉）</p>
+<li><p>对于每个单位对<em>(A,B)</em>，把所有的产生式<em>A-&gt;B</em>加入产生式集合P，其中<em>B-&gt;alpha</em>是P中的非单位产生式。（非形式地说，就是把所有单位产生式的“中介符号”消除掉）</p>
 </li>
 </ol>
 <h2 id="去除无用符号（所有含有该符号的产生式都要去除）"><a href="#去除无用符号（所有含有该符号的产生式都要去除）" class="headerlink" title="去除无用符号（所有含有该符号的产生式都要去除）"></a>去除无用符号（所有含有该符号的产生式都要去除）</h2><ol>
@@ -781,33 +781,31 @@
 <ol>
 <li><p>每个终结符是产生的</p>
 </li>
-<li><p>若有<br>$$<br>A\rightarrow \alpha<br>$$<br>且<em>alpha</em>中的符号都是产生的，则A也是产生的。（由后向前）</p>
+<li><p>若有<em>A-&gt;alpha</em>且<em>alpha</em>中的符号都是产生的，则A也是产生的。（由后向前）</p>
 </li>
 </ol>
 </li>
 <li><p>求可达集合</p>
-<pre><code>1. 开始符号是可达的
-  2. 若A可达，所有以A为产生式头的产生式体中的符号也是可达的。（由前向后）</code></pre></li>
+<pre><code>1. 开始符号是可达的</code></pre><ol start="2">
+<li>若A可达，所有以A为产生式头的产生式体中的符号也是可达的。（由前向后）</li>
+</ol>
+</li>
 </ul>
 </li>
 </ol>
 <h2 id="构建乔姆斯基范式"><a href="#构建乔姆斯基范式" class="headerlink" title="构建乔姆斯基范式"></a>构建乔姆斯基范式</h2><ol>
 <li><p>产生式只有两种形式</p>
 <ul>
-<li>$$<br>A\rightarrow BC<br>$$</li>
-</ul>
-<ul>
-<li>$$<br>A\rightarrow a<br>$$</li>
+<li></li>
+<li></li>
 </ul>
 </li>
 <li><p>方法：打断重排</p>
 <ul>
-<li>对于终结符，引入</li>
-</ul>
-<p>$$<br>A\rightarrow a<br>$$</p>
-<p>​        使产生式要么全是非终结符，要么是前面这种形式</p>
-<ul>
-<li>对于较长只有变元的产生式，采取引入变元的方式将长产生式打断成短产生式</li>
+<li><p>对于终结符，引入<em>A-&gt;alpha</em>使产生式要么全是非终结符，要么是前面这种形式</p>
+</li>
+<li><p>对于较长只有变元的产生式，采取引入变元的方式将长产生式打断成短产生式</p>
+</li>
 </ul>
 </li>
 </ol>
