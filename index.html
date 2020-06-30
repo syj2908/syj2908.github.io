@@ -718,7 +718,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  407
+                  412
                 </span>
               
 
@@ -778,17 +778,20 @@
 <li><p>判断有用符号：先判断产生的，再判断可达的</p>
 <ul>
 <li><p>求可生成集合</p>
-<ol>
+<ul>
 <li><p>每个终结符是产生的</p>
 </li>
 <li><p>若有<em>A-&gt;alpha</em>且<em>alpha</em>中的符号都是产生的，则A也是产生的。（由后向前）</p>
 </li>
-</ol>
+</ul>
 </li>
 <li><p>求可达集合</p>
-<pre><code>1. 开始符号是可达的</code></pre><ol start="2">
-<li>若A可达，所有以A为产生式头的产生式体中的符号也是可达的。（由前向后）</li>
-</ol>
+<ul>
+<li><p>开始符号是可达的</p>
+</li>
+<li><p>若A可达，所有以A为产生式头的产生式体中的符号也是可达的。（由前向后）</p>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -796,8 +799,8 @@
 <h2 id="构建乔姆斯基范式"><a href="#构建乔姆斯基范式" class="headerlink" title="构建乔姆斯基范式"></a>构建乔姆斯基范式</h2><ol>
 <li><p>产生式只有两种形式</p>
 <ul>
-<li></li>
-<li></li>
+<li><em>A-&gt;BC</em></li>
+<li><em>A-&gt;alpha</em></li>
 </ul>
 </li>
 <li><p>方法：打断重排</p>

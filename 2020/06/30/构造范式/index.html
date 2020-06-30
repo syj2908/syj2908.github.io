@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="syj&#39;s Blog">
 <meta property="og:description" content="如何构建范式及乔姆斯基范式产生范式的步骤 去除可空产生式 去除单位产生式 去除无用符号  去除可空产生式 求可空集合 对于含有可空符号的产生式进行排列组合，由原来的产生式分裂成空&#x2F;非空两类产生式  去除单位产生式 找单位产生式，求出所有单位对  对于每个单位对(A,B)，把所有的产生式A-&gt;B加入产生式集合P，其中B-&gt;alpha是P中的非单位产生式。（非形式地说，就是把所有单位产生式">
 <meta property="article:published_time" content="2020-06-30T02:14:53.000Z">
-<meta property="article:modified_time" content="2020-06-30T03:24:20.842Z">
+<meta property="article:modified_time" content="2020-06-30T03:32:36.500Z">
 <meta property="article:author" content="syj">
 <meta property="article:tag" content="范式">
 <meta name="twitter:card" content="summary">
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  407
+                  412
                 </span>
               
 
@@ -419,17 +419,20 @@
 <li><p>判断有用符号：先判断产生的，再判断可达的</p>
 <ul>
 <li><p>求可生成集合</p>
-<ol>
+<ul>
 <li><p>每个终结符是产生的</p>
 </li>
 <li><p>若有<em>A-&gt;alpha</em>且<em>alpha</em>中的符号都是产生的，则A也是产生的。（由后向前）</p>
 </li>
-</ol>
+</ul>
 </li>
 <li><p>求可达集合</p>
-<pre><code>1. 开始符号是可达的</code></pre><ol start="2">
-<li>若A可达，所有以A为产生式头的产生式体中的符号也是可达的。（由前向后）</li>
-</ol>
+<ul>
+<li><p>开始符号是可达的</p>
+</li>
+<li><p>若A可达，所有以A为产生式头的产生式体中的符号也是可达的。（由前向后）</p>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -437,8 +440,8 @@
 <h2 id="构建乔姆斯基范式"><a href="#构建乔姆斯基范式" class="headerlink" title="构建乔姆斯基范式"></a>构建乔姆斯基范式</h2><ol>
 <li><p>产生式只有两种形式</p>
 <ul>
-<li></li>
-<li></li>
+<li><em>A-&gt;BC</em></li>
+<li><em>A-&gt;alpha</em></li>
 </ul>
 </li>
 <li><p>方法：打断重排</p>
@@ -475,7 +478,7 @@
   <p><span>本文标题:</span><a href="/2020/06/30/%E6%9E%84%E9%80%A0%E8%8C%83%E5%BC%8F/">构造范式</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 syj 的个人博客">syj</a></p>
   <p><span>发布时间:</span>2020年06月30日 - 10:14</p>
-  <p><span>最后更新:</span>2020年06月30日 - 11:24</p>
+  <p><span>最后更新:</span>2020年06月30日 - 11:32</p>
   <p><span>原始链接:</span><a href="/2020/06/30/%E6%9E%84%E9%80%A0%E8%8C%83%E5%BC%8F/" title="构造范式">https://syj2908.github.io/2020/06/30/%E6%9E%84%E9%80%A0%E8%8C%83%E5%BC%8F/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://syj2908.github.io/2020/06/30/%E6%9E%84%E9%80%A0%E8%8C%83%E5%BC%8F/"  aria-label="复制成功！"></i></span>
   </p>
