@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,博客搭建," />
+  <meta name="keywords" content="Linux,Centos," />
 
 
 
@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="更换主题——Next  修改博主头像  修改博主名称  右上角实现了fork me on Github  加入了动态背景  在每篇文章末尾加入了分割线  主页文章添加了阴影效果  在网站底部添加了访问量统计、网站字数统计  添加了文章热度（但是还无法显示）  设置了网站的favicon（是一只奶黄色的咖啡杯）  每篇文章添加了字数统计和预计阅读时间  添加了加载进度条（样式还不是很满意）  文章">
+<meta name="description" content="萌生系统学习Linux的想法已经很久了，奈何学期内事情实在是多，很难挤出成块的时间学一学自己喜欢的东西。现在考试也考完了，小学期虽说要补乱七八糟的实验和实习，但自己能支配的时间相对来说还是蛮充裕的。前段时间搭好了这个博客，下来就学一学Linux吧😊  前期准备这次选择了VirtualBox+Centos来学Linux，所以第一步就是要下好VirtualBox和Centos的iso文件。 这里附上">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建博客的第二天">
-<meta property="og:url" content="https://syj2908.github.io/2020/06/28/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%A4%A9/index.html">
+<meta property="og:title" content="Linux 学习札记（一）">
+<meta property="og:url" content="https://syj2908.github.io/2020/06/30/Linux-%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="syj&#39;s Blog">
-<meta property="og:description" content="更换主题——Next  修改博主头像  修改博主名称  右上角实现了fork me on Github  加入了动态背景  在每篇文章末尾加入了分割线  主页文章添加了阴影效果  在网站底部添加了访问量统计、网站字数统计  添加了文章热度（但是还无法显示）  设置了网站的favicon（是一只奶黄色的咖啡杯）  每篇文章添加了字数统计和预计阅读时间  添加了加载进度条（样式还不是很满意）  文章">
-<meta property="article:published_time" content="2020-06-28T04:23:52.000Z">
-<meta property="article:modified_time" content="2020-06-29T02:09:00.552Z">
+<meta property="og:description" content="萌生系统学习Linux的想法已经很久了，奈何学期内事情实在是多，很难挤出成块的时间学一学自己喜欢的东西。现在考试也考完了，小学期虽说要补乱七八糟的实验和实习，但自己能支配的时间相对来说还是蛮充裕的。前段时间搭好了这个博客，下来就学一学Linux吧😊  前期准备这次选择了VirtualBox+Centos来学Linux，所以第一步就是要下好VirtualBox和Centos的iso文件。 这里附上">
+<meta property="article:published_time" content="2020-06-30T15:19:41.000Z">
+<meta property="article:modified_time" content="2020-07-01T08:23:48.297Z">
 <meta property="article:author" content="syj">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="博客搭建">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Centos">
 <meta name="twitter:card" content="summary">
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://syj2908.github.io/2020/06/28/搭建博客的第二天/"/>
+  <link rel="canonical" href="https://syj2908.github.io/2020/06/30/Linux-学习札记（一）/"/>
 
 
 
 
 
-  <title>搭建博客的第二天 | syj's Blog</title>
+  <title>Linux 学习札记（一） | syj's Blog</title>
   
 
 
@@ -272,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/06/28/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%A4%A9/">
+    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/06/30/Linux-%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="syj">
@@ -289,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">搭建博客的第二天</h1>
+          <h1 class="post-title" itemprop="name headline">Linux 学习札记（一）</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T12:23:52+08:00">
-                2020-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-30T23:19:41+08:00">
+                2020-06-30
               </time>
             
 
@@ -326,8 +326,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">博客搭建</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -362,7 +362,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  241
+                  1.8k
                 </span>
               
 
@@ -378,7 +378,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  6
                 </span>
               
             </div>
@@ -399,41 +399,122 @@
       
 
       
-        <ul>
-<li><p>更换主题——Next</p>
+        <p>萌生系统学习Linux的想法已经很久了，奈何学期内事情实在是多，很难挤出成块的时间学一学自己喜欢的东西。现在考试也考完了，小学期虽说要补乱七八糟的实验和实习，但自己能支配的时间相对来说还是蛮充裕的。前段时间搭好了这个博客，下来就学一学Linux吧😊</p>
+<hr>
+<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>这次选择了VirtualBox+Centos来学Linux，所以第一步就是要下好VirtualBox和Centos的iso文件。</p>
+<p>这里附上<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">VirtualBox</a>和<a href="https://mirrors.tuna.tsinghua.edu.cn/centos/7/isos/" target="_blank" rel="noopener">Centos</a>的下载地址，Centos用的是清华的镜像源，选择DVD版本即可。</p>
+<p>另外，VirtualBox想要搭建一个64-bit虚拟机，需要首先在BIOS中开启CPU的虚拟化功能。</p>
+<h1 id="新建一个虚拟机"><a href="#新建一个虚拟机" class="headerlink" title="新建一个虚拟机"></a>新建一个虚拟机</h1><p>比较重要的参数（来自书中，搭建练手机 够用就好😄）：</p>
+<ul>
+<li>内存：1024MB</li>
+<li>硬盘：40GB</li>
+</ul>
+<p>关于磁盘分区：</p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>容量</th>
+<th>文件系统</th>
+<th>分区格式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BIOS boot</td>
+<td>2MB</td>
+<td>系统自定义</td>
+<td>主要分区</td>
+</tr>
+<tr>
+<td>/boot</td>
+<td>1GB</td>
+<td>xfs</td>
+<td>主要分区</td>
+</tr>
+<tr>
+<td>/</td>
+<td>10GB</td>
+<td>xfs</td>
+<td>LVM方式</td>
+</tr>
+<tr>
+<td>/home</td>
+<td>5GB</td>
+<td>xfs</td>
+<td>LVM方式</td>
+</tr>
+<tr>
+<td>swap</td>
+<td>1GB</td>
+<td>swap</td>
+<td>LVM方式</td>
+</tr>
+</tbody></table>
+<p>接下来按照书上的步骤一步步就能装好Centos啦。</p>
+<p><strong>需要注意的事：</strong>为了强制使用GPT分区表，在安装界面时需要键入‘e’来输入额外的输入参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rd.live.check quiet inst.gpt</span><br></pre></td></tr></table></figure>
+
+<p>这样才能在完成磁盘分区后删除MBR分区表、建立GPT分区表。</p>
+<hr>
+<h1 id="理论知识梳理"><a href="#理论知识梳理" class="headerlink" title="理论知识梳理"></a>理论知识梳理</h1><p>这本书前面粗略讲解到了许多计算机概论和操作系统相关的理论知识，鉴于大三也要学操作系统这门课，也就顺便梳理一下这部分比较重要的知识吧👀。</p>
+<h2 id="最常见的两种CPU架构"><a href="#最常见的两种CPU架构" class="headerlink" title="最常见的两种CPU架构"></a>最常见的两种CPU架构</h2><p>精简指令集（RISC）：指令功能简单，运行时间短。ARM公司的ARM CPU就是这种架构。</p>
+<p>复杂指令集（CISC）：指令功能复杂，运行时间较长。Intel、AMD等x86架构的CPU使用的就是这种架构。</p>
+<h2 id="PC架构与相关设备组件"><a href="#PC架构与相关设备组件" class="headerlink" title="PC架构与相关设备组件"></a>PC架构与相关设备组件</h2><h3 id="北桥-南桥控制主板各组件间的通信"><a href="#北桥-南桥控制主板各组件间的通信" class="headerlink" title="北桥 南桥控制主板各组件间的通信"></a>北桥 南桥控制主板各组件间的通信</h3><p>北桥：连接🔗CPU、显卡、内存等速度较快的组件。现在一般都将内存控制器直接整合到CPU中，使CPU和内存直接交流，即提高了速度，也减少了占用的带宽。</p>
+<p>南桥：连接🔗IO设备接口等速度较慢的组件，例如硬盘、USB、网卡等。</p>
+<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><h4 id="CPU的工作频率"><a href="#CPU的工作频率" class="headerlink" title="CPU的工作频率"></a>CPU的工作频率</h4><p>外频：CPU和外部组件之间进行数据传输的速度</p>
+<p>倍频：CPU用来加速工作性能的一个倍数</p>
+<p>CPU工作频率=外频×倍频</p>
+<h4 id="超线程（HT）"><a href="#超线程（HT）" class="headerlink" title="超线程（HT）"></a>超线程（HT）</h4><p>每个CPU内将寄存器分为两组，让程序分别使用一组寄存器，不通过操作系统的多任务切换，而是让他们竞争使用CPU的资源，以此达到“仿佛同时有两个内核在工作”的效果。</p>
+<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><ul>
+<li><p>PC内存主要组件为DRAM（动态随机存取内存），DRAM又分为SDRAM和DDR SDRAM。<br>DDR是指<em>double data rate</em>(双倍数据传输速度），因此传输频率方面比较优秀。<br>类似的还有DDR2、DDR3，分别指频率倍数是4倍、8倍。</p>
 </li>
-<li><p>修改博主头像</p>
+<li><p>CPU内部的二级缓存使用的是SRAM（静态随机存取内存）</p>
 </li>
-<li><p>修改博主名称</p>
-</li>
-<li><p>右上角实现了<em>fork me on Github</em></p>
-</li>
-<li><p>加入了动态背景</p>
-</li>
-<li><p>在每篇文章末尾加入了分割线</p>
-</li>
-<li><p>主页文章添加了阴影效果</p>
-</li>
-<li><p>在网站底部添加了访问量统计、网站字数统计</p>
-</li>
-<li><p>添加了文章热度（但是还无法显示）</p>
-</li>
-<li><p>设置了网站的favicon（是一只奶黄色的咖啡杯）</p>
-</li>
-<li><p>每篇文章添加了字数统计和预计阅读时间</p>
-</li>
-<li><p>添加了加载进度条（样式还不是很满意）</p>
-</li>
-<li><p>文章底部可以添加版权信息了！</p>
-</li>
-<li><p>添加了分享功能</p>
-</li>
-<li><p>添加了置顶功能 被置顶的文章会显示一个大头针</p>
-</li>
-<li><p>完善了侧边导航页 包括<em>首页、关于、标签、分类、归档</em></p>
-<p><strong>改造博客的指导都来自<a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">这篇文章</a> 中途遇见了一些小问题也通过百度解决了 在此感谢一下</strong></p>
+<li><p>BIOS和固件存储在ROM中。</p>
 </li>
 </ul>
+<h3 id="硬盘与存储设备"><a href="#硬盘与存储设备" class="headerlink" title="硬盘与存储设备"></a>硬盘与存储设备</h3><ul>
+<li>扇区是最小的物理存储单位</li>
+<li>同一个同心圆上的扇区组合成的圆⚪就是磁道</li>
+<li>所有碟片上同一个磁道组成柱面</li>
+<li>硬盘内部机械臂的磁头和碟片之间有细微的空间，若有抖动或者污物附着就可能造成数据的损坏或者硬盘的损坏。并且要使用操作系统的关机方式，以保证机械臂正确归位</li>
+</ul>
+<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><ul>
+<li>操作系统内核：管理电脑所有活动以及驱动系统中所有硬件，主要功能包括：<br>系统调用接口<br>进程管理<br>内存管理<br>文件系统管理<br>设备驱动</li>
+<li>系统调用：为程序员提供一套应用程序编程接口</li>
+</ul>
+<hr>
+<h1 id="磁盘分区"><a href="#磁盘分区" class="headerlink" title="磁盘分区"></a>磁盘分区</h1><h2 id="磁盘的命名问题"><a href="#磁盘的命名问题" class="headerlink" title="磁盘的命名问题"></a>磁盘的命名问题</h2><p>所有设备在Linux系统下都是当作一个个文件来处理的，物理机中磁盘的名字一般为/dev/sd[a-p]，虚拟机中磁盘的名字一般为/dev/vd[a-p]。至于abcd的顺序则是根据系统检测到的磁盘顺序命名的。</p>
+<h2 id="磁盘分区格式"><a href="#磁盘分区格式" class="headerlink" title="磁盘分区格式"></a>磁盘分区格式</h2><h3 id="MBR（MS-DOS）格式"><a href="#MBR（MS-DOS）格式" class="headerlink" title="MBR（MS-DOS）格式"></a>MBR（MS-DOS）格式</h3><p>启动引导程序纪录区和分区表放在磁盘的第一个扇区，这个扇区通常是512字节。</p>
+<ul>
+<li>主引导记录：安装启动引导程序的地方，有446字节</li>
+<li>分区表：记录整块硬盘分区状态，有64字节</li>
+</ul>
+<p>由于分区表的大小限制，我们默认最多只能分出四个分区，我们一般称为主要分区和扩展分区。扩展分区还能继续分区，分出来的就叫做逻辑分区。</p>
+<p>逻辑分区的命名是从sd5开始的，前面四个代号是留给主要分区和逻辑分区用的（不管它们是否真的用完了）。</p>
+<p>这种格式由于大小限制，最大只能记录2TB左右的数据。</p>
+<h3 id="GPT磁盘分区表（partition-table）"><a href="#GPT磁盘分区表（partition-table）" class="headerlink" title="GPT磁盘分区表（partition table）"></a>GPT磁盘分区表（partition table）</h3><p>GPT将磁盘所有区块以LBA（逻辑区块地址）来划分（默认512字节），一共用了34个LBA，分别叫做LBA0~LBA33，并且磁盘的最后34个LBA也拿来作了一个备份。</p>
+<ul>
+<li>LBA0：功能类似MBR，存储了启动引导程序和一个特殊标志字符，以此表示是GPT格式。</li>
+<li>LBA1：GPT表头部分，记录了分区表本身的位置和大小，同时记录了备份GPT分区的位置。另外还有校验码之类的东西。</li>
+<li>LBA2~LBA33：实际的分区表。理论上说最大可以记录8ZB大小的数据。</li>
+</ul>
+<h1 id="计算机启动流程"><a href="#计算机启动流程" class="headerlink" title="计算机启动流程"></a>计算机启动流程</h1><ol>
+<li>BIOS：执行的第一个程序，它会识别出第一个可启动设备</li>
+<li>MBR/LBA0：第一个可启动设备的第一个扇区的主引导记录块，还有启动引导程序代码</li>
+<li>启动引导程序（boot loader）：一个可读取内核文件并且执行的软件，他会启动内核文件</li>
+<li>内核文件：启动操作系统</li>
+</ol>
+<p>启动引导程序的功能：</p>
+<ul>
+<li>提供不同的启动选项</li>
+<li>加载内核文件</li>
+<li>转交其他启动引导程序（多重引导，让你可以选择是用Windows还是Linux操作系统）</li>
+</ul>
+<p>每个分区的都有启动扇区，启动扇区里也可以安装启动引导程序。每个启动引导程序只会认识自己分区的内核文件以及其他的启动引导程序。</p>
+<h1 id="关于挂载"><a href="#关于挂载" class="headerlink" title="关于挂载"></a>关于挂载</h1><p>挂载，就是利用一个目录当作入口，将磁盘分区的数据放在该目录下。也就是说，进入该目录即可访问该分区的数据。</p>
+<hr>
+<p>以上就是整本书0、1、2章的整理与学习记录。前面偏理论多一点，因此记录下的知识点也多而杂，有些到现在也不能完全明白。不过后面会对每个点进行详细的讲解，所以就先姑且搁置到这吧😀。</p>
 
       
     </div>
@@ -456,12 +537,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2020/06/28/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%A4%A9/">搭建博客的第二天</a></p>
+  <p><span>本文标题:</span><a href="/2020/06/30/Linux-%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">Linux 学习札记（一）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 syj 的个人博客">syj</a></p>
-  <p><span>发布时间:</span>2020年06月28日 - 12:23</p>
-  <p><span>最后更新:</span>2020年06月29日 - 10:09</p>
-  <p><span>原始链接:</span><a href="/2020/06/28/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%A4%A9/" title="搭建博客的第二天">https://syj2908.github.io/2020/06/28/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%A4%A9/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://syj2908.github.io/2020/06/28/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%A4%A9/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2020年06月30日 - 23:19</p>
+  <p><span>最后更新:</span>2020年07月01日 - 16:23</p>
+  <p><span>原始链接:</span><a href="/2020/06/30/Linux-%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="Linux 学习札记（一）">https://syj2908.github.io/2020/06/30/Linux-%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://syj2908.github.io/2020/06/30/Linux-%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -492,9 +573,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i>Hexo</a>
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i>Linux</a>
           
-            <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag"><i class="fa fa-tag"></i>博客搭建</a>
+            <a href="/tags/Centos/" rel="tag"><i class="fa fa-tag"></i>Centos</a>
           
         </div>
       
@@ -507,8 +588,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/06/27/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/" rel="next" title="搭建博客的第一天">
-                <i class="fa fa-chevron-left"></i> 搭建博客的第一天
+              <a href="/2020/06/30/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E7%BC%96%E8%AF%91%E5%A4%8D%E4%B9%A0%E9%9A%8F%E8%AE%B0/" rel="next" title="形式语言与编译复习随记">
+                <i class="fa fa-chevron-left"></i> 形式语言与编译复习随记
               </a>
             
           </div>
@@ -516,10 +597,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/06/28/%E5%B0%8F%E5%AD%A6%E6%9C%9F%E5%AE%89%E6%8E%92/" rel="prev" title="小学期安排">
-                小学期安排 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -609,8 +686,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -674,6 +760,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前期准备"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新建一个虚拟机"><span class="nav-number">2.</span> <span class="nav-text">新建一个虚拟机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#理论知识梳理"><span class="nav-number">3.</span> <span class="nav-text">理论知识梳理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最常见的两种CPU架构"><span class="nav-number">3.1.</span> <span class="nav-text">最常见的两种CPU架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PC架构与相关设备组件"><span class="nav-number">3.2.</span> <span class="nav-text">PC架构与相关设备组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#北桥-南桥控制主板各组件间的通信"><span class="nav-number">3.2.1.</span> <span class="nav-text">北桥 南桥控制主板各组件间的通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU"><span class="nav-number">3.2.2.</span> <span class="nav-text">CPU</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU的工作频率"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">CPU的工作频率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#超线程（HT）"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">超线程（HT）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存"><span class="nav-number">3.2.3.</span> <span class="nav-text">内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬盘与存储设备"><span class="nav-number">3.2.4.</span> <span class="nav-text">硬盘与存储设备</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作系统"><span class="nav-number">3.3.</span> <span class="nav-text">操作系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#磁盘分区"><span class="nav-number">4.</span> <span class="nav-text">磁盘分区</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#磁盘的命名问题"><span class="nav-number">4.1.</span> <span class="nav-text">磁盘的命名问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#磁盘分区格式"><span class="nav-number">4.2.</span> <span class="nav-text">磁盘分区格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MBR（MS-DOS）格式"><span class="nav-number">4.2.1.</span> <span class="nav-text">MBR（MS-DOS）格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GPT磁盘分区表（partition-table）"><span class="nav-number">4.2.2.</span> <span class="nav-text">GPT磁盘分区表（partition table）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机启动流程"><span class="nav-number">5.</span> <span class="nav-text">计算机启动流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于挂载"><span class="nav-number">6.</span> <span class="nav-text">关于挂载</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
