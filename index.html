@@ -631,6 +631,268 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/07/13/%E7%BC%96%E8%AF%91%E5%99%A8%E5%AE%9E%E9%AA%8C%E6%9C%AD%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="syj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/pic1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="syj's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/13/%E7%BC%96%E8%AF%91%E5%99%A8%E5%AE%9E%E9%AA%8C%E6%9C%AD%E8%AE%B0/" itemprop="url">编译器实验札记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-13T21:34:52+08:00">
+                2020-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E7%BC%96%E8%AF%91/" itemprop="url" rel="index">
+                    <span itemprop="name">形式语言与编译</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>写在前面🔈</p>
+<p>因为疫情影响，整个学期的编译器都压在了小学期。更尴尬的是，即使去了实验室，那里的老师也不会给出更多的指导😅，因此后来干脆呆在宿舍自己折腾，从激活wsl，一直到第一次看到语法分析的结果输出到终端，其间踩过的大大小小的坑🕳不计其数，几次让我产生了放弃的念头😣。究其原因，还是觉得是一次性接受的新事物太多，导致难以很快上手。现在我把在学习过程中遇到的问题及解决方案罗列如下，希望能帮到陌生人和以后的自己🙌。</p>
+<hr>
+<h1 id="Q：win10系统，但是无法开启wsl？"><a href="#Q：win10系统，但是无法开启wsl？" class="headerlink" title="Q：win10系统，但是无法开启wsl？"></a>Q：win10系统，但是无法开启wsl？</h1><p>以前为了防止出现意外，关闭了win10的自动更新功能，导致win10版本过旧不支持wsl。</p>
+<p>更新系统💻就好了。</p>
+<h1 id="Q：wsl无法运行32bit程序，报错cannot-execute-binary-file-Exec-format-error？"><a href="#Q：wsl无法运行32bit程序，报错cannot-execute-binary-file-Exec-format-error？" class="headerlink" title="Q：wsl无法运行32bit程序，报错cannot execute binary file: Exec format error？"></a>Q：wsl无法运行32bit程序，报错cannot execute binary file: Exec format error？</h1><p>需要安装qemu&amp;binfmt</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install qemu-user-static</span><br><span class="line">sudo update-binfmts --install i386 &#x2F;usr&#x2F;bin&#x2F;qemu-i386-static --magic &#39;\x7fELF\x01\x01\x01\x03\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x03\x00\x01\x00\x00\x00&#39; --mask &#39;\xff\xff\xff\xff\xff\xff\xff\xfc\xff\xff\xff\xff\xff\xff\xff\xff\xf8\xff\xff\xff\xff\xff\xff\xff&#39;</span><br></pre></td></tr></table></figure>
+
+<p>然后每次重启wsl后都要重新开启qemu，也就是每次重启后要输入这句命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service binfmt-support start</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.cnblogs.com/TatuCz/p/10330820.html" target="_blank" rel="noopener">这里是参考资料来源</a></p>
+<h1 id="Q：如何在wsl与windows间复制粘贴东西？"><a href="#Q：如何在wsl与windows间复制粘贴东西？" class="headerlink" title="Q：如何在wsl与windows间复制粘贴东西？"></a>Q：如何在wsl与windows间复制粘贴东西？</h1><p>终端输入命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install yum</span><br><span class="line">sudo apt install gpm</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>ubuntu 控制台内部</strong><br>复制：按住鼠标左键选择，松开选定<br>粘贴：点击鼠标右键</li>
+<li><strong>win 复制到 ubuntu 粘贴</strong><br>win 复制：<code>Ctrl</code> +<code>C</code><br>ubuntu粘贴：点击鼠标右键</li>
+<li><strong>ubuntu 复制到 win 粘贴</strong><br>ubuntu 复制：<code>Shift</code> + <code>Ctrl</code>+<code>C</code><br>win 粘贴：<code>Ctrl</code> + <code>V</code></li>
+</ul>
+<p><a href="https://blog.csdn.net/CCCCJY/article/details/106549179" target="_blank" rel="noopener">这里是参考资料来源</a></p>
+<h1 id="Q：如何切换root用户登录？"><a href="#Q：如何切换root用户登录？" class="headerlink" title="Q：如何切换root用户登录？"></a>Q：如何切换root用户登录？</h1><p>wsl和我一般用的虚拟机还不太一样，一般的虚拟机配置的时候都会让你设置一个root用户，但是wsl一上手就只给了你一个普通账户，想拿<code>su -</code>登录root，就会让你输入root密码，但咱也没设过root密码啊！那怎么改root密码？网上给的方案是在root用户权限下就可以随意更改任何一个用户（包括root自己）的密码。</p>
+<p><strong>这不套娃呢么！</strong></p>
+<p>继续在网上找，终于找到了一个靠谱儿的方案，现在记录如下。</p>
+<ul>
+<li><p>先以管理员权限打开windows powershell</p>
+<p><code>win</code>+<code>R</code>打开运行框，输入<code>powershell</code>，打开后再输入<code>Start-Process powershell -Verb runAs</code>获取管理员权限。</p>
+</li>
+<li><p>然后修改登录wsl时的默认用户</p>
+<p>powershell里输入<code>ubuntu config --default-user root</code></p>
+<p>这样你下次登录wsl时，默认的用户就是root了，然后就能随意修改任意用户的密码了😏。</p>
+<p>root下修改密码的指令</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd --修改root密码</span><br><span class="line">sudo passwd syj --修改syj用户的密码</span><br></pre></td></tr></table></figure>
+
+<p>​        普通用户只能改自己的密码，指令为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.csdn.net/qq_29384639/article/details/90518491" target="_blank" rel="noopener">这里是参考：修改wsl默认登录用户为root</a></p>
+<p><a href="https://blog.csdn.net/hyfstyle/article/details/90904992" target="_blank" rel="noopener">这里是参考：Linux修改用户密码</a></p>
+<h1 id="Q：为什么我apt-get-install下不下来软件包啊？"><a href="#Q：为什么我apt-get-install下不下来软件包啊？" class="headerlink" title="Q：为什么我apt-get install下不下来软件包啊？"></a>Q：为什么我apt-get install下不下来软件包啊？</h1><p>想要运行make，就需要g++，但是wsl默认是没有g++的，需要自己下。</p>
+<p>这时候，问题就来了，每次用<code>sudo  apt-get install g++</code>时，他都会报错说缺少依赖的软件包，但想要下载被依赖的软件包时，又会说软件包缺少被依赖的被依赖的软件包……真是子子孙孙无穷尽也👨‍👩‍👧‍👦👨‍👩‍👧‍👦👨‍👩‍👧‍👦。</p>
+<p>网上查原因，最后才发现是源有问题。</p>
+<p><strong>一定要换对应版本的源！！！</strong></p>
+<p><strong>一定要换对应版本的源！！！</strong></p>
+<p><strong>一定要换对应版本的源！！！</strong></p>
+<p>选择一个<em>合适自己Linux</em>的源至关重要，以前的我总是随便在网上搜一个源就给粘上去了，导致了各种奇奇怪怪的问题💦。</p>
+<p>那什么叫<em>合适自己Linux</em>的源呢，说白了就是<strong>Linux版本号</strong>一定要对应。</p>
+<p>查看自己Linux内核版本号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsb_release -a</span><br></pre></td></tr></table></figure>
+
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">No LSB modules are available.</span><br><span class="line">Distributor ID: Ubuntu</span><br><span class="line">Description:    Ubuntu 20.04 LTS</span><br><span class="line">Release:        20.04</span><br><span class="line">Codename:       focal</span><br></pre></td></tr></table></figure>
+
+<p>这里20.04就是版本号，对应的昵称是<em>focal</em>，那我们一定就要换适配20.04版本的源，比如下面这个，阿里云源。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-updates main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-proposed main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-backports main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-updates main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-proposed main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+
+<p>具体步骤，先备份原来的源并另存为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -v &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.backup</span><br></pre></td></tr></table></figure>
+
+<p>然后修改源的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br></pre></td></tr></table></figure>
+
+<p>然后把找到的源粘过去就好了，vim的具体操作以后有时间再整理👻。</p>
+<p>改好源后更新下软件列表和软件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
+
+<p>重新install g++，顺利下载，问题完美解决🆒~</p>
+<p><a href="https://blog.csdn.net/qq_37960324/article/details/84644479" target="_blank" rel="noopener">这里是参考：查看Linux版本号</a></p>
+<p><a href="https://www.cnblogs.com/spqin/p/13285622.html" target="_blank" rel="noopener">这里是参考：Ubuntu20.04换源</a></p>
+<h1 id="Q：写好了分析器，用make命令会报很多错❌？"><a href="#Q：写好了分析器，用make命令会报很多错❌？" class="headerlink" title="Q：写好了分析器，用make命令会报很多错❌？"></a>Q：写好了分析器，用make命令会报很多错❌？</h1><p>检查当前目录下makefile文件是否正确，文件开头需要修改cool文件位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 将CLASSDIR设置成你电脑上cool项目所在的位置</span><br><span class="line">CLASSDIR&#x3D; &#x2F;mnt&#x2F;e&#x2F;Desktop&#x2F;作业&#x2F;编译原理&#x2F;实验&#x2F;编译第一次实验&#x2F;cool&#x2F;cool --这是我的cool的文位置，因此粘贴到这里就好了</span><br></pre></td></tr></table></figure>
+
+<p>我遇见的一般都是这个问题，还遇到过g++没装的问题（解决方案见前面），细心改改就好了。</p>
+<hr>
+<p>以上基本就是我在做编译器实验过程中遇到的值得记录的问题。</p>
+<p>说实话，这个实验本身并不难（其实代码部分他基本上都给你写好了，你所要做的就是用他的代码make出一个分析器而已），比较消耗时间的反而是环境的搭建与配置。由于Linux系统也是刚刚开始系统学习，因此要一步步亲自配好环境也是要花一番功夫的。</p>
+<p>总的来说，这么多小时砸了进去，编译器部分的知识没学多少，但对Linux的一些常见问题和对应的解决方案倒是有些了解了，也算没白费功夫吧💕。</p>
+<p>完结撒花🎉🎉🎉</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/07/01/Linux%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2541,182 +2803,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/06/27/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="syj">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/pic1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/27/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-27T16:34:48+08:00">
-                2020-06-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  73
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-    
-    </div>
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+
 
 
           </div>
@@ -2764,7 +2857,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2786,7 +2879,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2836,7 +2929,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.5k字</span>
+  <span class="post-count">博客全站共8.2k字</span>
 </div>
 
 <br>
