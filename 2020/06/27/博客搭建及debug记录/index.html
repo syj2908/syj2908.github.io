@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="Hexo,搭建博客," />
 
 
 
@@ -86,16 +86,17 @@
 
 
 
-<meta name="description" content="直接使用next主题，点击侧边栏的“日志”超链接时会发现报错：Cannot GET &#x2F;archives&#x2F;%7C%7C%20list&#x2F; 解决方法：在&#x2F;themes&#x2F;next&#x2F;layout&#x2F;_marco&#x2F;sidebar.swig中，将 1&lt;a href&#x3D;&quot;&amp;#123;&amp;#123; url_for(theme.menu.archives).split(&#39;||&#39;)">
+<meta name="description" content="搭建博客的第一天 使用github+Hexo搭建了一个简易的网站  参考教程来自这里 搭建博客的第二天 更换主题——Next 修改博主头像 修改博主名称 右上角实现了fork me on Github 加入了动态背景 在每篇文章末尾加入了分割线 主页文章添加了阴影效果 在网站底部添加了访问量统计、网站字数统计 添加了文章热度（但是还无法显示） 设置了网站的favicon（是一只奶黄色的咖啡杯） 每">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于next主题侧边栏日志链接丢失问题">
-<meta property="og:url" content="https://syj2908.github.io/2020/07/01/%E5%85%B3%E4%BA%8Enext%E4%B8%BB%E9%A2%98%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%97%A5%E5%BF%97%E9%93%BE%E6%8E%A5%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="博客搭建及debug记录">
+<meta property="og:url" content="https://syj2908.github.io/2020/06/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Adebug%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="syj&#39;s Blog">
-<meta property="og:description" content="直接使用next主题，点击侧边栏的“日志”超链接时会发现报错：Cannot GET &#x2F;archives&#x2F;%7C%7C%20list&#x2F; 解决方法：在&#x2F;themes&#x2F;next&#x2F;layout&#x2F;_marco&#x2F;sidebar.swig中，将 1&lt;a href&#x3D;&quot;&amp;#123;&amp;#123; url_for(theme.menu.archives).split(&#39;||&#39;)">
-<meta property="article:published_time" content="2020-07-01T08:54:00.000Z">
-<meta property="article:modified_time" content="2020-07-01T08:59:13.458Z">
+<meta property="og:description" content="搭建博客的第一天 使用github+Hexo搭建了一个简易的网站  参考教程来自这里 搭建博客的第二天 更换主题——Next 修改博主头像 修改博主名称 右上角实现了fork me on Github 加入了动态背景 在每篇文章末尾加入了分割线 主页文章添加了阴影效果 在网站底部添加了访问量统计、网站字数统计 添加了文章热度（但是还无法显示） 设置了网站的favicon（是一只奶黄色的咖啡杯） 每">
+<meta property="article:published_time" content="2020-06-27T08:53:51.000Z">
+<meta property="article:modified_time" content="2020-08-09T07:42:36.003Z">
 <meta property="article:author" content="syj">
 <meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="搭建博客">
 <meta name="twitter:card" content="summary">
 
 
@@ -126,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://syj2908.github.io/2020/07/01/关于next主题侧边栏日志链接丢失问题/"/>
+  <link rel="canonical" href="https://syj2908.github.io/2020/06/27/博客搭建及debug记录/"/>
 
 
 
 
 
-  <title>关于next主题侧边栏日志链接丢失问题 | syj's Blog</title>
+  <title>博客搭建及debug记录 | syj's Blog</title>
   
 
 
@@ -271,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/07/01/%E5%85%B3%E4%BA%8Enext%E4%B8%BB%E9%A2%98%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%97%A5%E5%BF%97%E9%93%BE%E6%8E%A5%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/06/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Adebug%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="syj">
@@ -288,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于next主题侧边栏日志链接丢失问题</h1>
+          <h1 class="post-title" itemprop="name headline">博客搭建及debug记录</h1>
         
 
         <div class="post-meta">
@@ -302,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-01T16:54:00+08:00">
-                2020-07-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-27T16:53:51+08:00">
+                2020-06-27
               </time>
             
 
@@ -361,7 +362,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  122
+                  840
                 </span>
               
 
@@ -377,7 +378,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -398,7 +399,47 @@
       
 
       
-        <p>直接使用next主题，点击侧边栏的“日志”超链接时会发现报错：Cannot GET /archives/%7C%7C%20list/</p>
+        <h1 id="搭建博客的第一天"><a href="#搭建博客的第一天" class="headerlink" title="搭建博客的第一天"></a>搭建博客的第一天</h1><ul>
+<li>使用github+Hexo搭建了一个简易的网站</li>
+</ul>
+<p><strong>参考教程来自<a href="https://zhuanlan.zhihu.com/p/78467553" target="_blank" rel="noopener">这里</a></strong></p>
+<h1 id="搭建博客的第二天"><a href="#搭建博客的第二天" class="headerlink" title="搭建博客的第二天"></a>搭建博客的第二天</h1><ul>
+<li>更换主题——Next</li>
+<li>修改博主头像</li>
+<li>修改博主名称</li>
+<li>右上角实现了<em>fork me on Github</em></li>
+<li>加入了动态背景</li>
+<li>在每篇文章末尾加入了分割线</li>
+<li>主页文章添加了阴影效果</li>
+<li>在网站底部添加了访问量统计、网站字数统计</li>
+<li>添加了文章热度（但是还无法显示）</li>
+<li>设置了网站的favicon（是一只奶黄色的咖啡杯）</li>
+<li>每篇文章添加了字数统计和预计阅读时间</li>
+<li>添加了加载进度条（样式还不是很满意）</li>
+<li>文章底部可以添加版权信息了！</li>
+<li>添加了分享功能</li>
+<li>添加了置顶功能 被置顶的文章会显示一个大头针</li>
+<li>完善了侧边导航页 包括<em>首页、关于、标签、分类、归档</em></li>
+</ul>
+<p><strong>改造博客的指导都来自<a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">这篇文章</a> 中途遇见了一些小问题也通过百度解决了 在此感谢一下</strong></p>
+<h1 id="搭建博客的第三天"><a href="#搭建博客的第三天" class="headerlink" title="搭建博客的第三天"></a>搭建博客的第三天</h1><p>大框架已经完成 今天就剩下一些收尾美化工作了</p>
+<ul>
+<li><p>隐藏底部<em>powered by hexo</em>字样</p>
+</li>
+<li><p>更改了博客名和博主名（暂时想不出好的博客名了 拿这个凑合着先用吧</p>
+</li>
+<li><p>更换了加载动画 以前那个手机端看的话背景在没加载完成的情况下一直在闪 十分费眼睛…</p>
+</li>
+<li><p>添加了博客访问人数 和访问次数区分开来</p>
+</li>
+<li><p>添加了每篇文章的热度（虽然自带的🔥icon不太像</p>
+</li>
+<li><p>剩下的完善工作还有：<strong>关于</strong>页面的完善等</p>
+<p>折腾了三天 累了 上学期资料的整理及上传就过一段时间再整吧 接下来准备下一段的学习任务</p>
+</li>
+</ul>
+<h1 id="关于next主题侧边栏日志链接丢失问题"><a href="#关于next主题侧边栏日志链接丢失问题" class="headerlink" title="关于next主题侧边栏日志链接丢失问题"></a>关于next主题侧边栏日志链接丢失问题</h1><p>直接使用next主题，点击侧边栏的“日志”超链接时会发现报错：</p>
+<p>Cannot GET /archives/%7C%7C%20list/</p>
 <p>解决方法：在/themes/next/layout/_marco/sidebar.swig中，将</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&#123;&#123; url_for(theme.menu.archives).split(&#39;||&#39;)[0] | trim &#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
 
@@ -409,6 +450,17 @@
 <p>听说是url_for函数把||转义了，所以造成找不到正确的链接。</p>
 <p>完美解决！😊</p>
 <p>这里是<a href="https://blog.csdn.net/qq_38765633/article/details/104929566" target="_blank" rel="noopener">参考资料</a></p>
+<h1 id="关于next主题侧边页面的丢失问题"><a href="#关于next主题侧边页面的丢失问题" class="headerlink" title="关于next主题侧边页面的丢失问题"></a>关于next主题侧边页面的丢失问题</h1><p>直接拿到的next主题自身有些小bug❌，比如点击侧边栏的“关于”、“标签”、“分类”、”归档“，都会报错说找不到这个页面，下面是解决方案。</p>
+<p>在blog目录下打开Git Bash，新建页面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo newpage about</span><br><span class="line">hexo newpage archives</span><br><span class="line">hexo newpage categories</span><br><span class="line">hexo newpage home</span><br><span class="line">hexo newpage tags</span><br></pre></td></tr></table></figure>
+
+<p>然后打开next主题的配置文件/theme/next/_config.yml，找到menu部分：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || heartbeat</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable/Disable menu icons.</span></span><br><span class="line"><span class="attr">menu_icons:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>这里他的每一个||前面都多了一个空格，因此把空格删去就好了，改成下面的代码：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/||</span> <span class="string">home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/||</span> <span class="string">user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/||</span> <span class="string">tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/||</span> <span class="string">th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/||</span> <span class="string">archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || heartbeat</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable/Disable menu icons.</span></span><br><span class="line"><span class="attr">menu_icons:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>重新生成博客，就会发现侧边栏的几个链接都能用啦😄~</p>
 
       
     </div>
@@ -425,6 +477,35 @@
     <div>
       
         
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2020/06/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Adebug%E8%AE%B0%E5%BD%95/">博客搭建及debug记录</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 syj 的个人博客">syj</a></p>
+  <p><span>发布时间:</span>2020年06月27日 - 16:53</p>
+  <p><span>最后更新:</span>2020年08月09日 - 15:42</p>
+  <p><span>原始链接:</span><a href="/2020/06/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Adebug%E8%AE%B0%E5%BD%95/" title="博客搭建及debug记录">https://syj2908.github.io/2020/06/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Adebug%E8%AE%B0%E5%BD%95/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://syj2908.github.io/2020/06/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Adebug%E8%AE%B0%E5%BD%95/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
       
     </div>
 
@@ -440,6 +521,8 @@
           
             <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i>Hexo</a>
           
+            <a href="/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="tag"><i class="fa fa-tag"></i>搭建博客</a>
+          
         </div>
       
 
@@ -451,18 +534,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/06/30/Linux%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" rel="next" title="Linux学习札记（一）">
-                <i class="fa fa-chevron-left"></i> Linux学习札记（一）
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/01/%E5%85%B3%E4%BA%8Enext%E4%B8%BB%E9%A2%98%E4%BE%A7%E8%BE%B9%E9%A1%B5%E9%9D%A2%E7%9A%84%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/" rel="prev" title="关于next主题侧边页面的丢失问题">
-                关于next主题侧边页面的丢失问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/06/30/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E7%BC%96%E8%AF%91%E5%A4%8D%E4%B9%A0%E9%9A%8F%E8%AE%B0/" rel="prev" title="形式语言与编译复习随记">
+                形式语言与编译复习随记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -553,8 +632,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -573,7 +661,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -584,7 +672,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -595,7 +683,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -618,6 +706,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建博客的第一天"><span class="nav-number">1.</span> <span class="nav-text">搭建博客的第一天</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建博客的第二天"><span class="nav-number">2.</span> <span class="nav-text">搭建博客的第二天</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建博客的第三天"><span class="nav-number">3.</span> <span class="nav-text">搭建博客的第三天</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于next主题侧边栏日志链接丢失问题"><span class="nav-number">4.</span> <span class="nav-text">关于next主题侧边栏日志链接丢失问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于next主题侧边页面的丢失问题"><span class="nav-number">5.</span> <span class="nav-text">关于next主题侧边页面的丢失问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -645,7 +749,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.2k字</span>
+  <span class="post-count">博客全站共8.3k字</span>
 </div>
 
 <br>
