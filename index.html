@@ -269,6 +269,228 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/08/17/Git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="syj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/pic2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="syj's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/17/Git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/" itemprop="url">Git使用指北</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-17T21:37:17+08:00">
+                2020-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  889
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><em>“Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。”</em></p>
+<p>最近在整理之前的各种资料，有时候需要把整个文件夹传到Github上，但是之前一直采取的是手动拖拽文件的上传方式，文件数量一多这个方法就会显得非常繁琐。因此便借着这个契机学学怎么用Git。</p>
+<h1 id="Git的工作流程"><a href="#Git的工作流程" class="headerlink" title="Git的工作流程"></a>Git的工作流程</h1><h2 id="仓库初始化"><a href="#仓库初始化" class="headerlink" title="仓库初始化"></a>仓库初始化</h2><ol>
+<li>获取ssh密钥并把它添加到你的GitHub账号上去</li>
+<li>新建一个本地文件夹作为仓库</li>
+<li>仓库初始化 <code>git init</code> 这条command会在文件夹中生成一个<em>.git</em>文件，用于保存仓库快照</li>
+</ol>
+<p>这样一个本地仓库就搭好了。之前搭这个博客的时候已经完成了第一步，因此真正要做的事情并不多。</p>
+<h2 id="仓库基本管理"><a href="#仓库基本管理" class="headerlink" title="仓库基本管理"></a>仓库基本管理</h2><p>基本流程：修改文件→提交改动到缓存→提交缓存到仓库</p>
+<p><code>git add &lt;file/dir&gt;</code>：将改动添加到缓存</p>
+<p><code>git status -[s]</code>：查看自上次提交之后是否有修改</p>
+<p><code>git diff -[cached]</code>：查看改动的详细信息</p>
+<p><code>git commit -m &quot;annotation&quot;</code>：将缓存提交到仓库</p>
+<p><code>git rm &lt;file&gt;</code>：取消跟踪文件</p>
+<p><code>git mv &lt;file&gt;</code>：文件重命名</p>
+<h3 id="git-add-lt-file-dir-gt"><a href="#git-add-lt-file-dir-gt" class="headerlink" title="git add &lt;file/dir&gt;"></a>git add &lt;file/dir&gt;</h3><p>比如你新建了一个文件foo，修改了一个文件bar，想要把这些改动提交到缓存，就命令行写入<code>git add foo bar</code>。</p>
+<p>命令对象同样支持目录，一般新建一个仓库，要把所有文件都提交到缓存，就用<code>git add .</code>即可。</p>
+<h3 id="git-status-s"><a href="#git-status-s" class="headerlink" title="git status -[s]"></a>git status -[s]</h3><p>可以查看有哪些改动提交到了缓存但还没提交到仓库。</p>
+<p>还是上面的例子，新建了一个文件foo，修改了一个文件bar，这时候查看改动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$git status -s #这里参数s是要求简短输出格式</span><br><span class="line">?? foo</span><br><span class="line">M  bar</span><br></pre></td></tr></table></figure>
+
+<p>文件名前面的符号含义：</p>
+<p>？？：新建</p>
+<p>M     ：改动</p>
+<p>D      ：删除</p>
+<p>A       ：已添加到缓存</p>
+<h3 id="git-diff-cached"><a href="#git-diff-cached" class="headerlink" title="git diff -[cached]"></a>git diff -[cached]</h3><p>可以查看具体是哪里有改动</p>
+<p>比如我在文件里插入了一条注释，再查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ git diff</span><br><span class="line">diff --git a&#x2F;del_same_images&#x2F;de1_same_images.py b&#x2F;del_same_images&#x2F;del_same_images.py</span><br><span class="line">index 2f2bdf7 . .dd6daee 100644</span><br><span class="line">--- a&#x2F;de1_same_images&#x2F;de1_same_images.py</span><br><span class="line">+++ b&#x2F;de1_same_images&#x2F;de1_same_images.py</span><br><span class="line">@@ -3,6 +3,7@@ import re</span><br><span class="line">#删除文件夹中相同的图片</span><br><span class="line">file_path &#x3D;r&#39;E:\Desktop\游戏截图\PS4\SHARE\Screenshots\FINAL FANTASY VII REMAKE&#39;</span><br><span class="line">+#i这条路径依据存放图片的文件夹位置而定</span><br><span class="line"> def delete_same_images (path):</span><br><span class="line"> 	filenames&#x3D; os.1istdir(path)</span><br><span class="line">	count &#x3D; 0</span><br></pre></td></tr></table></figure>
+
+<p>效果和Bash的diff及其相似。</p>
+<h3 id="git-commit-m-“annotation”"><a href="#git-commit-m-“annotation”" class="headerlink" title="git commit -m “annotation”"></a>git commit -m “annotation”</h3><p>将缓存提交到仓库，必须要加一句注释</p>
+<h3 id="git-rm-r-f-lt-file-dir-gt"><a href="#git-rm-r-f-lt-file-dir-gt" class="headerlink" title="git rm -[r f] &lt;file/dir&gt;"></a>git rm -[r f] &lt;file/dir&gt;</h3><p>仅仅将一个文件<code>shift+D</code>删除是不够的，因为Git依旧会追踪这个文件的去向，要想完全将文件删除（或者说取消追踪）就要用到这条命令。其中参数-r是允许递归删除目录，-f允许强制删除/</p>
+<h3 id="git-mv-lt-file-dir-gt"><a href="#git-mv-lt-file-dir-gt" class="headerlink" title="git mv &lt;file/dir&gt;"></a>git mv &lt;file/dir&gt;</h3><p>普普通通的重命名。</p>
+<h2 id="Git-Github远程仓库"><a href="#Git-Github远程仓库" class="headerlink" title="Git+Github远程仓库"></a>Git+Github远程仓库</h2><p>在对本地仓库commit好了后，就要将远程仓库更新。</p>
+<h3 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h3><p>在仓库文件夹中打开git bash，输入<code>git remote [repo_name] [url]</code>。</p>
+<p>其中repo_name我一般喜欢和仓库名同名，url即Github仓库的url，这个指令每个仓库只用配置一次下次打开他会自动配置。</p>
+<h3 id="从Github仓库pull数据"><a href="#从Github仓库pull数据" class="headerlink" title="从Github仓库pull数据"></a>从Github仓库pull数据</h3><p><code>git pull [repo_name] [branch_name]</code></p>
+<h3 id="push数据到Github仓库"><a href="#push数据到Github仓库" class="headerlink" title="push数据到Github仓库"></a>push数据到Github仓库</h3><p><code>git push [repo_name] [branch_name]</code></p>
+<p>注意这里要指定分支名。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/08/09/Linux%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1934,7 +2156,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1945,7 +2167,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1956,7 +2178,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2006,7 +2228,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.3k字</span>
+  <span class="post-count">博客全站共9.2k字</span>
 </div>
 
 <br>
