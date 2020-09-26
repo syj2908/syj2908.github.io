@@ -269,6 +269,1450 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="syj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/pic2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="syj's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="url">计算机组成原理学习随记（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-26T21:03:55+08:00">
+                2020-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机组成原理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  801
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="计算机系统简介"><a href="#计算机系统简介" class="headerlink" title="计算机系统简介"></a>计算机系统简介</h1><p>计算机系统=硬件+软件</p>
+<p>硬件：组成计算机各种实际装置的总称</p>
+<p>软件：具有各类特殊功能的程序和相关数据</p>
+<p>软件又可分成系统软件和应用软件</p>
+<p>系统软件：标准程序库、编译器、汇编器、操作系统、服务程序、数据库管理系统、网络软件等</p>
+<p>软件和硬件在逻辑上是等效的</p>
+<h1 id="计算机系统的发展与应用"><a href="#计算机系统的发展与应用" class="headerlink" title="计算机系统的发展与应用"></a>计算机系统的发展与应用</h1><p>存储程序思想宣告了现代计算机结构思想的诞生</p>
+<h1 id="计算机硬件的组成"><a href="#计算机硬件的组成" class="headerlink" title="计算机硬件的组成"></a>计算机硬件的组成</h1><p>冯·诺依曼计算机的特点：</p>
+<ul>
+<li>五大部件：运算器、控制器、存储器、输入设备、输出设备</li>
+<li>指令和数据均由二进制形式表示</li>
+<li>指令和数据以同等地位存放在存储器中，可按地址访问</li>
+<li>指令由操作码和地址码组成</li>
+<li>指令在存储器内按顺序存放</li>
+<li>机器以运算器为中心，IO设备与存储器间的数据传送通过运算器完成</li>
+</ul>
+<p>CPU=运算器+控制器</p>
+<p>主机=CPU+主存储器（注意没有硬盘，它属于IO设备）</p>
+<p>主存储器：可以直接与CPU交换信息、用来存放正在运行的程序和数据</p>
+<p>存储元件-&gt;存储单元-&gt;存储体</p>
+<p>每个存储元件能存放一位二进制代码；每个存储单元能存储一串二进制代码，称之为存储字，二进制代码的位数称之为存储字长</p>
+<p>读/写操作以存储单元为最小访问单位</p>
+<p>主存中的MAR&amp;MDR：</p>
+<ul>
+<li>MAR（Memory Address Register）：用来存放欲访问的存储单元的地址。位数和存储单元的个数有关，存储单元越多，位数越长。</li>
+<li>MDR（Memory Data Register）：用来存放从存储器单元取出的代码或准备向某存储单元存入的代码，位数与存储字长有关。</li>
+<li>MAR和MDR集成在CPU中。</li>
+</ul>
+<p>控制器执行阶段：取指阶段-&gt;分析阶段-&gt;执行阶段，通过不同阶段来区分代码是指令或是数据</p>
+<p>控制器=程序计数器PC+指令寄存器IR+控制单元CU</p>
+<ul>
+<li>PC存放下一条指令在主存单元中的地址，与MAR间有直接通路，且有自动+1功能。</li>
+<li>IR存放当前正在执行的指令代码，内容来自主存的MDR。</li>
+<li>IR中的操作码送至CU进行指令分析。</li>
+</ul>
+<p>运算器的核心是算术逻辑运算单元ALU，除此之外还包含一些寄存器，用来暂存运算数据和结果。</p>
+<p>寄存器包括累加器AC、乘商寄存器MQ、操作数寄存器X</p>
+<h1 id="计算机系统的性能"><a href="#计算机系统的性能" class="headerlink" title="计算机系统的性能"></a>计算机系统的性能</h1><p>性能=f(功能，质量)</p>
+<p>机器字长指CPU依次能处理的二进制数据的最大位数。</p>
+<p>存储字长=机器字长</p>
+<p>指令字长=n*字节，n∈整数</p>
+<p>内存=主存+cache</p>
+<ul>
+<li>按字编址，主存容量=存储单元个数×存储字长，单位为字（W）或位（b），如64K×32位。</li>
+<li>按字节编址，存储容量等于存储的字节数。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="syj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/pic2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="syj's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" itemprop="url">计算机组成原理学习随记（二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-26T21:03:47+08:00">
+                2020-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机组成原理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>指令系统是一台计算机所具有的全部机器指令的集合，由操作码和地址码组成。</p>
+<p>指令$\begin{cases}宏指令\机器指令\微指令\end{cases}$</p>
+<h1 id="二、指令系统的发展"><a href="#二、指令系统的发展" class="headerlink" title="二、指令系统的发展"></a>二、指令系统的发展</h1><h2 id="CISC"><a href="#CISC" class="headerlink" title="CISC"></a>CISC</h2><p>用一条复杂的新指令代替原先需要一串指令完成的功能，减少访问主存的次数以提高速度。</p>
+<p>指令系统庞大复杂，大多数复杂指令很少用到。</p>
+<h2 id="RISC"><a href="#RISC" class="headerlink" title="RISC"></a>RISC</h2><p>只包含使用频率高的少量指令，并提供一些必要指令以支持高级语言。</p>
+<ul>
+<li>优先选取使用频率高的简单指令</li>
+<li>指令长度固定、格式种类少、寻址方式种类少。各字段划分较一致，功能也比较规整。</li>
+<li>只有LOAD\STORE可以访问存储器，其余在寄存器操作。</li>
+<li>有大量通用寄存器。</li>
+<li>CPU采用流水结构。</li>
+<li>控制单元设计以硬布线控制逻辑为主。</li>
+<li>采用编译优化技术。</li>
+</ul>
+<h1 id="三、指令系统的功能"><a href="#三、指令系统的功能" class="headerlink" title="三、指令系统的功能"></a>三、指令系统的功能</h1><h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><ul>
+<li>完整性</li>
+<li>规整性<ul>
+<li>对称性</li>
+<li>匀齐性</li>
+<li>一致性</li>
+</ul>
+</li>
+<li>高效性</li>
+<li>兼容性</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="操作数类型"><a href="#操作数类型" class="headerlink" title="操作数类型"></a>操作数类型</h3><p>数据表示：机器硬件能够直接识别、指令能直接操作的数据结构</p>
+<ul>
+<li>地址</li>
+<li>数字</li>
+<li>字符</li>
+<li>逻辑数</li>
+</ul>
+<p>字节或半字数据加载到32位寄存器时要扩充，有符号数高位用符号位填充，无符号数用0填充。</p>
+<h3 id="地址空间"><a href="#地址空间" class="headerlink" title="地址空间"></a>地址空间</h3><p>地址空间$\begin{cases}通用寄存器\主存储器\IO设备\end{cases}$</p>
+<ul>
+<li><p>三地址空间</p>
+</li>
+<li><p>两地址空间</p>
+<p>主存地址高端划分出部分作为IO设备地址。</p>
+<p>能够访问主存的指令都能访问IO设备，但会影响速度。</p>
+</li>
+<li><p>一地址空间</p>
+<p>最低端是通用寄存器，最高端是IO设备地址，中间是主存。</p>
+</li>
+</ul>
+<h3 id="编址方式"><a href="#编址方式" class="headerlink" title="编址方式"></a>编址方式</h3><ul>
+<li><p>按字编址</p>
+</li>
+<li><p>按字节编址</p>
+<p>CPU可按字或字节访问主存。</p>
+</li>
+</ul>
+<p>字节编址顺序$\begin{cases}大端（低字节高地址）\小端（低字节低地址）\end{cases}$</p>
+<p>边界对齐$\begin{cases}对齐：访问字节半字单子可在一个周期内完成\不对齐：节省空间，但访问速度可能低\end{cases}$</p>
+<h1 id="四、指令格式"><a href="#四、指令格式" class="headerlink" title="四、指令格式"></a>四、指令格式</h1><h2 id="指令组成"><a href="#指令组成" class="headerlink" title="指令组成"></a>指令组成</h2><p>指令=操作码+地址码</p>
+<p>操作码提供：指令操作类型和操作数类型</p>
+<p>三种CPU结构$\begin{cases}堆栈型\累加器型\通用寄存器型(RR、RS)\end{cases}$</p>
+<h2 id="指令字长"><a href="#指令字长" class="headerlink" title="指令字长"></a>指令字长</h2><p>指令字长：包含二进制码的位数</p>
+<p>基本原则：</p>
+<ul>
+<li>指令字长尽量短</li>
+<li>信息为利用率尽量高</li>
+</ul>
+<p>登场指令字结构、变长指令字结构</p>
+<h3 id="操作码扩展技术"><a href="#操作码扩展技术" class="headerlink" title="操作码扩展技术"></a>操作码扩展技术</h3><p>等长指令字结构中，利用地址码个数较少的指令<strong>空出的地址码字段</strong>来增加<strong>操作码</strong>的位数。</p>
+<p>一般方法：先安排地址码最多的指令。</p>
+<h1 id="五、寻址方式"><a href="#五、寻址方式" class="headerlink" title="五、寻址方式"></a>五、寻址方式</h1><p>$\begin{cases}指令寻址\数据寻址\end{cases}$</p>
+<p>形式地址：符号地址。</p>
+<p>有效地址：内存在本程序中的相对地址。</p>
+<h2 id="指令寻址"><a href="#指令寻址" class="headerlink" title="指令寻址"></a>指令寻址</h2><p>$\begin{cases}顺序寻址\跳跃寻址\end{cases}$</p>
+<h2 id="数据寻址"><a href="#数据寻址" class="headerlink" title="数据寻址"></a>数据寻址</h2><h3 id="基本寻址"><a href="#基本寻址" class="headerlink" title="基本寻址"></a>基本寻址</h3><p>$\begin{cases}立即寻址\寄存器寻址\存储器寻址\堆栈寻址\end{cases}$</p>
+<h4 id="1-立即寻址"><a href="#1-立即寻址" class="headerlink" title="1.立即寻址"></a>1.立即寻址</h4><p>操作数直接在指令的地址码字段给出（立即数）。</p>
+<p>$eg:MOV EAX, 100$</p>
+<h4 id="2-寄存器寻址"><a href="#2-寄存器寻址" class="headerlink" title="2.寄存器寻址"></a>2.寄存器寻址</h4><p>操作数已经在寄存器中，或者操作结果要存回通用寄存器中。</p>
+<p>$eg: MOV EAX, 100$</p>
+<h4 id="3-存储器寻址"><a href="#3-存储器寻址" class="headerlink" title="3.存储器寻址"></a>3.存储器寻址</h4><p>$\begin{cases}直接寻址\存储器间接寻址\寄存器间接寻址\偏移寻址\段寻址\end{cases}$</p>
+<h5 id="①-直接寻址"><a href="#①-直接寻址" class="headerlink" title="① 直接寻址"></a>① 直接寻址</h5><p>指令中地址码字段就是操作数或下一条指令的有效地址。</p>
+<p>$eg：MOV EAX, [100]$</p>
+<h5 id="②-存储器间接寻址"><a href="#②-存储器间接寻址" class="headerlink" title="② 存储器间接寻址"></a>② 存储器间接寻址</h5><p>指令中地址码字段是操作数<strong>地址的地址</strong>。</p>
+<p>间接寻址一次称为一次间接，可以有多次间接。</p>
+<p>间接寻址有一个标志位$\begin{cases}=0：后跟的地址码即有效地址\=1：后跟的依旧是地址的地址，继续套娃\end{cases}$</p>
+<p>第一个间接寻址标志由指令给出，剩下的由访问主存所取出的地址码给出（通常是第一位）。</p>
+<p>一次间接寻址的最大寻址范围是$2^m$字，两次间接寻址的最大寻址范围是$2^{m-1}$字。</p>
+<p>$eg: JMP  word  ptr  [100]$</p>
+<h5 id="③-寄存器间接寻址"><a href="#③-寄存器间接寻址" class="headerlink" title="③ 寄存器间接寻址"></a>③ 寄存器间接寻址</h5><p>形式地址给出的是通用寄存器的编号。</p>
+<p>对于一次寄存器间接寻址，寄存器中的内容就是有效地址。</p>
+<p>寄存器间接寻址的范围取决于寄存器位数（也等于机器字长）。</p>
+<p>$eg: MOV EAX, [EBX]$</p>
+<h5 id="④-偏移寻址"><a href="#④-偏移寻址" class="headerlink" title="④ 偏移寻址"></a>④ 偏移寻址</h5><p>形式上：直接寻址+寄存器间接寻址</p>
+<p>$EA=(R_i)+A$，其中A是有符号数，通常用补码表示。</p>
+<p>$\begin{cases}相对寻址\变址寻址\基址寻址\end{cases}$</p>
+<h6 id="i-相对寻址"><a href="#i-相对寻址" class="headerlink" title="i. 相对寻址"></a>i. 相对寻址</h6><p>$EA=(PC)+A$</p>
+<p>寻址范围：$(PC)-2^{k-1}$~$(PC)+2^{k-1}-1$</p>
+<p>指令间相对距离不变，有利于程序在内存中浮动。</p>
+<h6 id="ii-变址寻址"><a href="#ii-变址寻址" class="headerlink" title="ii. 变址寻址"></a>ii. 变址寻址</h6><p>$EA=(R_i)+A$</p>
+<p>变址寄存器中存放地址的修改量，每次会自动调整，形式地址给出地址的起始量。</p>
+<p>寻址范围$2^n$，n是变址寄存器的位数。</p>
+<h6 id="iii-基址寻址"><a href="#iii-基址寻址" class="headerlink" title="iii. 基址寻址"></a>iii. 基址寻址</h6><p>基址寻址通常用于实现操作系统对用户程序的动态定位。</p>
+<p><strong>变址寻址与基址寻址异同</strong>：变址寻址重在偏移量的改变；基址寻址重在起始地址的不同。</p>
+<h5 id="⑤段寻址"><a href="#⑤段寻址" class="headerlink" title="⑤段寻址"></a>⑤段寻址</h5><p>段寻址是硬件自动完成的，过程对用户透明。</p>
+<p>段寻址方式中的段内偏移量就是EA。</p>
+<h4 id="4-堆栈寻址"><a href="#4-堆栈寻址" class="headerlink" title="4. 堆栈寻址"></a>4. 堆栈寻址</h4><p>利用堆栈存取数据。指令长度短，但运算速度低。</p>
+<h3 id="复合寻址"><a href="#复合寻址" class="headerlink" title="复合寻址"></a>复合寻址</h3><p>关键问题是计算顺序。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="syj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/pic2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="syj's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" itemprop="url">计算机网络学习随记（二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-26T20:59:06+08:00">
+                2020-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  549
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="网络分层"><a href="#网络分层" class="headerlink" title="网络分层"></a>网络分层</h1><h2 id="分层思想"><a href="#分层思想" class="headerlink" title="分层思想"></a>分层思想</h2><p>每一层的目的都是向他的上一层提供服务。</p>
+<p>$模板\begin{cases}①分层\②每层提供的服务\end{cases}$</p>
+<p>$实例\begin{cases}①层与模板的对应关系\②每层协议\end{cases}$</p>
+<p>分层思想的优势：</p>
+<ul>
+<li>各层之间相互独立</li>
+<li>灵活性好</li>
+<li>结构上可分割</li>
+<li>易于实现和维护</li>
+<li>能促进标准化工作</li>
+</ul>
+<p>接口用于定义下层向上层提供的原语操作和服务。</p>
+<p><strong>网络体系结构</strong>：层+协议的集合</p>
+<p>协议栈：为实现某一特定功能的相关协议集合。</p>
+<h2 id="实体和协议"><a href="#实体和协议" class="headerlink" title="实体和协议"></a>实体和协议</h2><p><strong>实体</strong>：层中的活动元素，包括软件和硬件。</p>
+<p><strong>对等实体</strong>：<strong>不同</strong>机器（发送端与接收端）里处于<strong>同一层次</strong>的实体。对等实体利用协议通信。</p>
+<p>不同网络层次中的实体实现的功能互不相同。</p>
+<p><strong>网络协议</strong>：为网络执行数据交换而建立的规则、标准或约定。包含三个要素：语法、语义、同步。</p>
+<ul>
+<li>语法：传输信息应遵循的数据结构形式。</li>
+<li>语义：对各个协议元素含义的解释。</li>
+<li>同步：规定实体之间通信操作执行的顺序。</li>
+</ul>
+<h2 id="接口和服务"><a href="#接口和服务" class="headerlink" title="接口和服务"></a>接口和服务</h2><p>服务是在服务访问点（SAP)提供给上层使用的。</p>
+<h2 id="数据单元"><a href="#数据单元" class="headerlink" title="数据单元"></a>数据单元</h2><p>数据单元：网络中信息传送的单位。</p>
+<p>对等实体在<strong>协议</strong>下传送数据单元。</p>
+<p>相邻层实体按<strong>服务</strong>传送数据单元。</p>
+<p>$\begin{cases}协议数据单元PDU\接口数据单元IDU\服务数据单元SDU\end{cases}$</p>
+<ol>
+<li><p>PDU</p>
+<p><strong>不同系统的对等实体</strong>为实现该层协议所交换的数据单元。</p>
+<p>PDU=PCI+UD</p>
+<p>PCI-协议控制信息</p>
+</li>
+<li><p>IDU</p>
+<p><strong>同一系统的相邻层实体</strong>的一次交互中，经过<strong>层间接口</strong>的数据单元。</p>
+<p>IDU=ICI+ID</p>
+<p>ICI-接口控制信息</p>
+</li>
+<li><p>SDU</p>
+<p><strong>上层服务用户</strong>所要求传递的数据单元，(n)接口数据的总额。</p>
+</li>
+<li><p>(n+1)PDU=(n)SDU=(n)UD</p>
+<p>对于某一子层，接收的数据是SDU，处理后（分段/合并）发出的数据是PDU。</p>
+<p>PDU经过SAP时可能会分成多个IDU经过。</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="syj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/pic2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="syj's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="url">计算机网络学习随记（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-26T20:59:00+08:00">
+                2020-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  800
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="计算机网络的定义"><a href="#计算机网络的定义" class="headerlink" title="计算机网络的定义"></a>计算机网络的定义</h1><p><strong><em>“以能够相互共享资源的方式互连起来的自治计算机系统的集合。”</em></strong></p>
+<p>特征：</p>
+<ul>
+<li>资源共享</li>
+<li>分布在不同地理位置的独立“自治计算机”</li>
+<li>遵循共同的网络协议</li>
+</ul>
+<p>判断计算机是否互联成计算机网络，主要看他们是不是独立的”<strong>自治计算机</strong>”</p>
+<p>分布式系统重点在于系统，而非具体的某一台主机。</p>
+<h1 id="计算机网络发展历程"><a href="#计算机网络发展历程" class="headerlink" title="计算机网络发展历程"></a>计算机网络发展历程</h1><ul>
+<li><p>以单计算机为中心的联机系统（第一代计算机网络）</p>
+<ul>
+<li>特征$\begin{cases}单处理机为中心的联机网络\集中式控制\end{cases}$</li>
+<li>主机负荷重</li>
+<li>通信线路利用率低</li>
+<li>可靠性低</li>
+</ul>
+</li>
+<li><p>多点通信线路能够提高信道的利用率</p>
+<ul>
+<li>采用终端集中器/前端处理器处理终端通信任务</li>
+</ul>
+</li>
+<li><p>分组交换网络（第二代计算机网络）</p>
+<ul>
+<li>主机互联方式有①主机直接互联②利用CCP（Communication Control Processor）间接互联</li>
+<li>采用分层思想，CCP构成通信子网（内层，数据传输），主机构成资源子网（外层，信息处理）</li>
+<li>多主机为中心，“主机——主机”连接方式</li>
+<li>划分分组、先存储再转发</li>
+<li>ARPANET特点：①资源共享②分散控制③分组交换④采用专门的通信控制处理机⑤分层的网络协议</li>
+</ul>
+</li>
+</ul>
+<h1 id="计算机网络体系结构标准化"><a href="#计算机网络体系结构标准化" class="headerlink" title="计算机网络体系结构标准化"></a>计算机网络体系结构标准化</h1><p><strong>协议</strong>是同等层次实体之间进行信息交互的规则。</p>
+<p>计算机网络的体系结构=计算机网络的层次结构+各层协议的集合。</p>
+<p>国际标准：OSI标准</p>
+<p>实际标准：TCP/IP体系结构</p>
+<h1 id="网络拓扑结构"><a href="#网络拓扑结构" class="headerlink" title="网络拓扑结构"></a>网络拓扑结构</h1><p>辨析：$\begin{cases}<br>传输介质（物理）\<br>传输信道（逻辑）<br>\end{cases}$</p>
+<ul>
+<li><p>星型结构</p>
+<p>广播/点到点均可</p>
+<p>建网容易，易于扩充，故障不扩散</p>
+<p>集中控制，对中心节点依赖性大，布线困难</p>
+</li>
+<li><p>树形结构</p>
+<p>属于分层网络，有一定容错能力</p>
+<p>集中式控制，对上层节点依赖性强</p>
+</li>
+<li><p>总线型结构</p>
+<p>线路长度短、布线容易</p>
+<p>故障有扩散性且定位困难</p>
+</li>
+<li><p>环形结构</p>
+<p>主要是光纤网络</p>
+<p>数据在环上<strong>单向</strong>流动</p>
+</li>
+<li><p>不规则形结构</p>
+<p>可靠性强，设置冗余通信线路以保证连通性</p>
+<p>传输效率低</p>
+</li>
+<li><p>全连接型结构</p>
+</li>
+</ul>
+<h1 id="计算机网络分类"><a href="#计算机网络分类" class="headerlink" title="计算机网络分类"></a>计算机网络分类</h1><p>按距离：广域网WAN（Wide Area Network）、局域网LAN（Local Area Network）</p>
+<p>划分原因：连接节点数不同导致传输方式不同</p>
+<p>按通信传播方式：广播网络、点对点网络</p>
+<ul>
+<li><p>广播网络：共享一个公共通信信道，一人发送数据所有人能接收到。但同时发送数据会产生冲突。一般用于小范围局域网。</p>
+<p>解决冲突：①“讲前先听”②“边讲边听”</p>
+</li>
+<li><p>点对点网络：每条通信线路只链接一对计算机，依赖中间节点的存储转发，源端到目的端可存在多条路由，关键是路由选择。是否采用<strong>存储转发</strong>与<strong>路由选择</strong>是两种网络的重要区别之一。</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/09/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="syj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/pic2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="syj's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" itemprop="url">操作系统学习随记（二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-26T20:46:28+08:00">
+                2020-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  447
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="操作系统的服务"><a href="#操作系统的服务" class="headerlink" title="操作系统的服务"></a>操作系统的服务</h1><p>$\begin{cases}提供用户功能\确保系统本身高效运行\end{cases}$</p>
+<h1 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h1><p>系统调用提供操作系统服务接口。</p>
+<p>通过API编程的好处之一是程序的可移植性好。</p>
+<p>向操作系统传递参数$\begin{cases}通过寄存器传递\通过地址传递\通过堆栈传递\end{cases}$</p>
+<p>系统调用类型$\begin{cases}进程控制\文件管理\设备管理\信息维护\通信\保护\end{cases}$</p>
+<p>如果新程序终止时返回到现有程序，那必须保存现有程序的内存映像。</p>
+<p>当多进程共享数据时，系统调用应使一个进程锁定共享数据。</p>
+<p>通信传递模型$\begin{cases}消息传递模型：通信进程通过消息交换来传递信息\共享内存模型：创建共享内存交换信息\end{cases}$</p>
+<h1 id="操作系统结构"><a href="#操作系统结构" class="headerlink" title="操作系统结构"></a>操作系统结构</h1><ul>
+<li>简单结构</li>
+<li>分层结构<ul>
+<li>简化了系统的调试和验证</li>
+<li>难于合理定义每层内容</li>
+<li>效率较差</li>
+</ul>
+</li>
+<li>微内核<ul>
+<li>从内核中删除了所有不必要的部件，将他们当作系统级和用户级的程序来实现。</li>
+<li>主要功能：为客户端程序和各种服务提供通信（通过消息传递）、任务调度、虚拟内存管理。</li>
+</ul>
+</li>
+<li>模块化设计<ul>
+<li>内核通过模块链入额外服务，其他服务可在内核运行时动态实现。</li>
+</ul>
+</li>
+</ul>
+<h1 id="系统引导"><a href="#系统引导" class="headerlink" title="系统引导"></a>系统引导</h1><p><strong>引导</strong>：加载内核以启动计算机的过程</p>
+<p><strong>引导程序</strong>能定位内核并加载到内存以执行</p>
+<p>对于大型操作系统，引导程序存放在固件上，操作系统存放在磁盘上。</p>
+<p>系统诊断→初始化→启动操作系统</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/09/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="syj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/pic2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="syj's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="url">操作系统学习随记（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-26T20:45:06+08:00">
+                2020-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>操作系统是管理计算机硬件的程序，它还为应用程序提供基础，并且充当计算机用户和计算机硬件的中介。</p>
+<h1 id="操作系统的功能"><a href="#操作系统的功能" class="headerlink" title="操作系统的功能"></a>操作系统的功能</h1><p>计算机系统自底向上可分为：硬件、操作系统、应用程序、用户。</p>
+<p>从系统视角来看，可将操作系统看作<strong>资源分配器</strong>和<strong>控制程序</strong>。</p>
+<p><strong>操作系统是一直运行在计算机上的程序（Kernel）。</strong></p>
+<p>操作系统功能：<strong>进程管理、内存管理、文件管理、设备管理</strong></p>
+<h1 id="计算机系统的组成"><a href="#计算机系统的组成" class="headerlink" title="计算机系统的组成"></a>计算机系统的组成</h1><p>电源打开→运行引导程序→初始化系统各组件→定位操作系统内核并加载到内存。</p>
+<p>CPU只能从内存加载指令。</p>
+<p>每个计算机系统由一个CPU和多个设备控制器组成，他们通过共同总线连接在一起。每个设备控制器维护一定量的本地缓冲存储和一组特定用途的寄存器。设备控制器负责IO设备和本地缓冲存储之间的数据传递。操作系统为每个设备控制器提供设备驱动程序，该驱动控制设备控制器，并为操作系统其他部分提供访问接口。</p>
+<p>开始IO→设备驱动程序加载设备控制器适当寄存器→设备控制器检查寄存器内容，决定下一步操作→控制器开始向本地缓冲区传输数据</p>
+<p>IO处理$\begin{cases}同步处理\异步处理\end{cases}$</p>
+<h1 id="计算机系统的体系结构"><a href="#计算机系统的体系结构" class="headerlink" title="计算机系统的体系结构"></a>计算机系统的体系结构</h1><ul>
+<li>单处理器系统：只有一个通用CPU，可以有专用CPU</li>
+<li>多处理器系统：有两个以上紧密通信的CPU<ul>
+<li>增加吞吐量</li>
+<li>规模经济</li>
+<li>增加系统可靠性</li>
+<li>$\begin{cases}共享cache\共享IO接口\共享数据包\end{cases}$</li>
+</ul>
+</li>
+</ul>
+<h1 id="操作系统的结构"><a href="#操作系统的结构" class="headerlink" title="操作系统的结构"></a>操作系统的结构</h1><p>$\begin{cases}脱机IO方式\简单批处理\多道批处理\分时系统\实时系统\end{cases}$</p>
+<p>简单批处理特征：</p>
+<ul>
+<li>顺序性</li>
+<li>单道性</li>
+<li>自动性</li>
+</ul>
+<p>多道批处理特征：</p>
+<ul>
+<li>多道性</li>
+<li>无序性</li>
+<li>调度性</li>
+</ul>
+<p>实时系统要求有deadline，可硬可软。</p>
+<p>在<strong>多道程序系统</strong>中，每个用户的作业都保存在硬盘（作业池）上，需要用的时候再转移到内存中。多道程序系统宏观上并行，微观上串行。</p>
+<p>在<strong>分时系统</strong>中，作业直接进入内存，每个用户至少有一个程序在内存中。</p>
+<p>多道程序系统和分时系统区别：多道程序系统重点在”同时“运行多个程序，而分时系统重点在同时为多个用户提供服务。</p>
+<h1 id="操作系统的执行"><a href="#操作系统的执行" class="headerlink" title="操作系统的执行"></a>操作系统的执行</h1><p>现代操作系统是<strong>中断驱动</strong>的。</p>
+<p>双重模式——<strong>用户模式</strong>和<strong>内核模式</strong>：</p>
+<ul>
+<li>计算机硬件通过<strong>模式位</strong>表示当前模式。</li>
+<li>每当操作系统控制计算机时，它处于内核模式。当用户应用通过系统调用请求操作系统服务时，系统必须从用户模式切换到内核模式。</li>
+<li>可能引起损害的机器指令为<strong>特权指令</strong>，硬件只有在内核模式下才能执行特权指令。</li>
+<li>常见特权指令：切换到用户模式、IO控制、定时器管理、中断管理。</li>
+</ul>
+<h1 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h1><p>程序是被动实体，进程是主动实体。</p>
+<p>单线程进程有一个PC，多线程进程有多个PC。</p>
+<p>进程是系统的工作单元，系统由多个进程组成。</p>
+<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><p>内存是现代计算机系统执行的中心。</p>
+<p>内存一般是CPU所能直接寻址和访问的、唯一的、大容量的存储器。</p>
+<h1 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h1><p>计算机运行的最终速度与硬盘子系统的速度和管理该子系统的算法由很大关系。</p>
+<p>高速缓存是一个相对的概念，相对更快的存储系统对于相对更慢的存储系统来说都是高速缓存。</p>
+<p>高速缓存要注意一致性。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/08/18/%E5%AE%89%E8%A3%85chromedriver/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1091,1189 +2535,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/07/01/Linux%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="syj">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/pic2.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/01/Linux%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" itemprop="url">Linux学习札记（二）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-01T17:15:38+08:00">
-                2020-07-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  885
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="首次登陆与在线求助"><a href="#首次登陆与在线求助" class="headerlink" title="首次登陆与在线求助"></a>首次登陆与在线求助</h1><p>重启图形界面X Window：<code>Alt</code>+<code>Ctrl</code>+<code>Backspace</code></p>
-<p>切换GUI与命令行模式：</p>
-<p><code>Ctrl</code>+<code>Alt</code>+<code>F1</code>：GUI模式</p>
-<p><code>Ctrl</code>+<code>Alt</code>+<code>F2~F6</code>：命令行模式登录tty2~tty6终端</p>
-<p>在输入命令的时候连续按下两次<code>Tab</code>键可以实现命令补全和文件补齐的功能</p>
-<p><code>Ctrl</code>+<code>C</code>：中断目前程序</p>
-<p><code>Ctrl</code>+<code>D</code>：退出命令行模式</p>
-<p><code>Shift</code>+<code>Page UP</code>/<code>Page Down</code>：命令行模式中上下翻页</p>
-<h2 id="在线求助"><a href="#在线求助" class="headerlink" title="在线求助"></a>在线求助</h2><h3 id="man-page"><a href="#man-page" class="headerlink" title="man page"></a>man page</h3><p>可以获得某个命令的具体相关信息，比如说想知道cal的具体用法，则命令行输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man cal</span><br></pre></td></tr></table></figure>
-
-<p>即可显示。</p>
-<ul>
-<li><code>man -f cal</code>：取得更多和cal相关的信息（不是对cal的描述，而是和cal相关的命令的信息）</li>
-<li><code>man -k cal</code>：把所有命令中含有cal字段的命令都罗列出来</li>
-</ul>
-<h3 id="info-page"><a href="#info-page" class="headerlink" title="info page"></a>info page</h3><p>将相关文件数据拆成一个个段落，每个段落拥有独立页面显示内容，每个这样的界面称为结点，节点之间可以像网页的超链接一样进行跳转。</p>
-<p>这两个查找🔍帮助信息的命令下有很多具体的指令，一时半会也记不下来，随用随查吧。</p>
-<h2 id="正确的关机📴姿势"><a href="#正确的关机📴姿势" class="headerlink" title="正确的关机📴姿势"></a>正确的关机📴姿势</h2><p>由于Linux是多人多任务系统，因此不正确的关机可能会导致数据的丢失与损坏。</p>
-<p>关机操作只能由root执行。</p>
-<ul>
-<li><code>who</code>：查看目前有谁在线</li>
-<li><code>netstat-a</code>：网络联机状况</li>
-<li><code>ps-aux</code>：查看后台执行程序</li>
-<li><code>sync</code>：数据同步写入硬盘指令，一般用户执行此指令只能把自己的数据同步写入，root执行此指令可以把所有用户的数据同步写入。每次关机以前一定要先同步数据。</li>
-<li><code>shutdown  -h now</code>：立即关机</li>
-<li><code>shutdown -r 10</code>：10分钟后重启（如果不设定时间，默认一分钟后执行操作）</li>
-<li><code>shutdown -k &#39;I will shut this system&#39;</code>：不关机，只是发送警告信息</li>
-<li><code>shutdown -c</code>：取消关机计划</li>
-</ul>
-<h1 id="Linux的文件权限与目录配置"><a href="#Linux的文件权限与目录配置" class="headerlink" title="Linux的文件权限与目录配置"></a>Linux的文件权限与目录配置</h1><p>查看所有文件详细权限和属性的命令：<code>ls -al</code></p>
-<h2 id="文件属性"><a href="#文件属性" class="headerlink" title="文件属性"></a>文件属性</h2><p>文件属性示意：<code>-rw-r--r-- 1 root root 1864 May 4 16:01 initaial-setup-ks.cfg</code></p>
-<ol>
-<li><p><code>-rw-r--r--</code>：文件类型权限，具体还能分成四部分</p>
-<ul>
-<li><code>-</code>：表示文件类型，<code>d</code>是目录，<code>-</code>是文件，<code>|</code>是链接🔗文件（相当于快捷方式），<code>b</code>是周边存储设备，<code>c</code>是串行端口设备</li>
-<li>剩下九个字符三个一组，分别表示的是文件拥有者的权限、加入用户组账号的权限、一般用户的权限。r表示可读，w表示可写，x表示可执行。rwx排列顺序固定，若没有某一权限，就会用-代替那个字符。比如例子中的<code>rw-</code>，表示文件拥有者对这个文件可读可写不可执行。</li>
-</ul>
-</li>
-<li><p><code>1</code>：表示链接到这一节点的文件数量</p>
-</li>
-<li><p><code>root</code>：文件拥有者</p>
-</li>
-<li><p><code>root</code>：文件所属的用户组</p>
-</li>
-<li><p><code>1864</code>：文件大小，默认Byte</p>
-</li>
-<li><p><code>May 4 16：01</code>：文件最后修改时间</p>
-</li>
-<li><p><code>initaial-setup-ks.cfg</code>：文件名</p>
-</li>
-</ol>
-<h2 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h2><p><strong>以下操作都要使用root权限。</strong></p>
-<h3 id="修改文件所属用户组"><a href="#修改文件所属用户组" class="headerlink" title="修改文件所属用户组"></a>修改文件所属用户组</h3><p><code>chgrp [-R] groupname filename/dirname</code></p>
-<p>R表示递归修改该目录下所有文件的所属用户组</p>
-<h3 id="修改文件拥有者"><a href="#修改文件拥有者" class="headerlink" title="修改文件拥有者"></a>修改文件拥有者</h3><p><code>chown [-R] name[:groupname] filename/dirname</code></p>
-<p>可以在修改用户名的同属修改所属用户组</p>
-<h3 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h3><h4 id="数字🔢表示法"><a href="#数字🔢表示法" class="headerlink" title="数字🔢表示法"></a>数字🔢表示法</h4><p><code>chmod 763 filname/dirname</code></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-    
-    </div>
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/06/30/Linux%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="syj">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/pic2.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/30/Linux%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="url">Linux学习札记（一）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-30T23:19:41+08:00">
-                2020-06-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.8k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>萌生系统学习Linux的想法已经很久了，奈何学期内事情实在是多，很难挤出成块的时间学一学自己喜欢的东西。现在考试也考完了，小学期虽说要补乱七八糟的实验和实习，但自己能支配的时间相对来说还是蛮充裕的。前段时间搭好了这个博客，下来就学一学Linux吧😊</p>
-<hr>
-<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>这次选择了VirtualBox+Centos来学Linux，所以第一步就是要下好VirtualBox和Centos的iso文件。</p>
-<p>这里附上<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">VirtualBox</a>和<a href="https://mirrors.tuna.tsinghua.edu.cn/centos/7/isos/" target="_blank" rel="noopener">Centos</a>的下载地址，Centos用的是清华的镜像源，选择DVD版本即可。</p>
-<p>另外，VirtualBox想要搭建一个64-bit虚拟机，需要首先在BIOS中开启CPU的虚拟化功能。</p>
-<h1 id="新建一个虚拟机"><a href="#新建一个虚拟机" class="headerlink" title="新建一个虚拟机"></a>新建一个虚拟机</h1><p>比较重要的参数（来自书中，搭建练手机 够用就好😄）：</p>
-<ul>
-<li>内存：1024MB</li>
-<li>硬盘：40GB</li>
-</ul>
-<p>关于磁盘分区：</p>
-<table>
-<thead>
-<tr>
-<th>目录</th>
-<th>容量</th>
-<th>文件系统</th>
-<th>分区格式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>BIOS boot</td>
-<td>2MB</td>
-<td>系统自定义</td>
-<td>主要分区</td>
-</tr>
-<tr>
-<td>/boot</td>
-<td>1GB</td>
-<td>xfs</td>
-<td>主要分区</td>
-</tr>
-<tr>
-<td>/</td>
-<td>10GB</td>
-<td>xfs</td>
-<td>LVM方式</td>
-</tr>
-<tr>
-<td>/home</td>
-<td>5GB</td>
-<td>xfs</td>
-<td>LVM方式</td>
-</tr>
-<tr>
-<td>swap</td>
-<td>1GB</td>
-<td>swap</td>
-<td>LVM方式</td>
-</tr>
-</tbody></table>
-<p>接下来按照书上的步骤一步步就能装好Centos啦。</p>
-<p><strong>需要注意的事：</strong>为了强制使用GPT分区表，在安装界面时需要键入‘e’来输入额外的输入参数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rd.live.check quiet inst.gpt</span><br></pre></td></tr></table></figure>
-
-<p>这样才能在完成磁盘分区后删除MBR分区表、建立GPT分区表。</p>
-<hr>
-<h1 id="理论知识梳理"><a href="#理论知识梳理" class="headerlink" title="理论知识梳理"></a>理论知识梳理</h1><p>这本书前面粗略讲解到了许多计算机概论和操作系统相关的理论知识，鉴于大三也要学操作系统这门课，也就顺便梳理一下这部分比较重要的知识吧👀。</p>
-<h2 id="最常见的两种CPU架构"><a href="#最常见的两种CPU架构" class="headerlink" title="最常见的两种CPU架构"></a>最常见的两种CPU架构</h2><p>精简指令集（RISC）：指令功能简单，运行时间短。ARM公司的ARM CPU就是这种架构。</p>
-<p>复杂指令集（CISC）：指令功能复杂，运行时间较长。Intel、AMD等x86架构的CPU使用的就是这种架构。</p>
-<h2 id="PC架构与相关设备组件"><a href="#PC架构与相关设备组件" class="headerlink" title="PC架构与相关设备组件"></a>PC架构与相关设备组件</h2><h3 id="北桥-南桥控制主板各组件间的通信"><a href="#北桥-南桥控制主板各组件间的通信" class="headerlink" title="北桥 南桥控制主板各组件间的通信"></a>北桥 南桥控制主板各组件间的通信</h3><p>北桥：连接🔗CPU、显卡、内存等速度较快的组件。现在一般都将内存控制器直接整合到CPU中，使CPU和内存直接交流，即提高了速度，也减少了占用的带宽。</p>
-<p>南桥：连接🔗IO设备接口等速度较慢的组件，例如硬盘、USB、网卡等。</p>
-<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><h4 id="CPU的工作频率"><a href="#CPU的工作频率" class="headerlink" title="CPU的工作频率"></a>CPU的工作频率</h4><p>外频：CPU和外部组件之间进行数据传输的速度</p>
-<p>倍频：CPU用来加速工作性能的一个倍数</p>
-<p>CPU工作频率=外频×倍频</p>
-<h4 id="超线程（HT）"><a href="#超线程（HT）" class="headerlink" title="超线程（HT）"></a>超线程（HT）</h4><p>每个CPU内将寄存器分为两组，让程序分别使用一组寄存器，不通过操作系统的多任务切换，而是让他们竞争使用CPU的资源，以此达到“仿佛同时有两个内核在工作”的效果。</p>
-<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><ul>
-<li><p>PC内存主要组件为DRAM（动态随机存取内存），DRAM又分为SDRAM和DDR SDRAM。<br>DDR是指<em>double data rate</em>(双倍数据传输速度），因此传输频率方面比较优秀。<br>类似的还有DDR2、DDR3，分别指频率倍数是4倍、8倍。</p>
-</li>
-<li><p>CPU内部的二级缓存使用的是SRAM（静态随机存取内存）</p>
-</li>
-<li><p>BIOS和固件存储在ROM中。</p>
-</li>
-</ul>
-<h3 id="硬盘与存储设备"><a href="#硬盘与存储设备" class="headerlink" title="硬盘与存储设备"></a>硬盘与存储设备</h3><ul>
-<li>扇区是最小的物理存储单位</li>
-<li>同一个同心圆上的扇区组合成的圆⚪就是磁道</li>
-<li>所有碟片上同一个磁道组成柱面</li>
-<li>硬盘内部机械臂的磁头和碟片之间有细微的空间，若有抖动或者污物附着就可能造成数据的损坏或者硬盘的损坏。并且要使用操作系统的关机方式，以保证机械臂正确归位</li>
-</ul>
-<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><ul>
-<li>操作系统内核：管理电脑所有活动以及驱动系统中所有硬件，主要功能包括：<br>系统调用接口<br>进程管理<br>内存管理<br>文件系统管理<br>设备驱动</li>
-<li>系统调用：为程序员提供一套应用程序编程接口</li>
-</ul>
-<hr>
-<h1 id="磁盘分区"><a href="#磁盘分区" class="headerlink" title="磁盘分区"></a>磁盘分区</h1><h2 id="磁盘的命名问题"><a href="#磁盘的命名问题" class="headerlink" title="磁盘的命名问题"></a>磁盘的命名问题</h2><p>所有设备在Linux系统下都是当作一个个文件来处理的，物理机中磁盘的名字一般为/dev/sd[a-p]，虚拟机中磁盘的名字一般为/dev/vd[a-p]。至于abcd的顺序则是根据系统检测到的磁盘顺序命名的。</p>
-<h2 id="磁盘分区格式"><a href="#磁盘分区格式" class="headerlink" title="磁盘分区格式"></a>磁盘分区格式</h2><h3 id="MBR（MS-DOS）格式"><a href="#MBR（MS-DOS）格式" class="headerlink" title="MBR（MS-DOS）格式"></a>MBR（MS-DOS）格式</h3><p>启动引导程序纪录区和分区表放在磁盘的第一个扇区，这个扇区通常是512字节。</p>
-<ul>
-<li>主引导记录：安装启动引导程序的地方，有446字节</li>
-<li>分区表：记录整块硬盘分区状态，有64字节</li>
-</ul>
-<p>由于分区表的大小限制，我们默认最多只能分出四个分区，我们一般称为主要分区和扩展分区。扩展分区还能继续分区，分出来的就叫做逻辑分区。</p>
-<p>逻辑分区的命名是从sd5开始的，前面四个代号是留给主要分区和逻辑分区用的（不管它们是否真的用完了）。</p>
-<p>这种格式由于大小限制，最大只能记录2TB左右的数据。</p>
-<h3 id="GPT磁盘分区表（partition-table）"><a href="#GPT磁盘分区表（partition-table）" class="headerlink" title="GPT磁盘分区表（partition table）"></a>GPT磁盘分区表（partition table）</h3><p>GPT将磁盘所有区块以LBA（逻辑区块地址）来划分（默认512字节），一共用了34个LBA，分别叫做LBA0~LBA33，并且磁盘的最后34个LBA也拿来作了一个备份。</p>
-<ul>
-<li>LBA0：功能类似MBR，存储了启动引导程序和一个特殊标志字符，以此表示是GPT格式。</li>
-<li>LBA1：GPT表头部分，记录了分区表本身的位置和大小，同时记录了备份GPT分区的位置。另外还有校验码之类的东西。</li>
-<li>LBA2~LBA33：实际的分区表。理论上说最大可以记录8ZB大小的数据。</li>
-</ul>
-<h1 id="计算机启动流程"><a href="#计算机启动流程" class="headerlink" title="计算机启动流程"></a>计算机启动流程</h1><ol>
-<li>BIOS：执行的第一个程序，它会识别出第一个可启动设备</li>
-<li>MBR/LBA0：第一个可启动设备的第一个扇区的主引导记录块，还有启动引导程序代码</li>
-<li>启动引导程序（boot loader）：一个可读取内核文件并且执行的软件，他会启动内核文件</li>
-<li>内核文件：启动操作系统</li>
-</ol>
-<p>启动引导程序的功能：</p>
-<ul>
-<li>提供不同的启动选项</li>
-<li>加载内核文件</li>
-<li>转交其他启动引导程序（多重引导，让你可以选择是用Windows还是Linux操作系统）</li>
-</ul>
-<p>每个分区的都有启动扇区，启动扇区里也可以安装启动引导程序。每个启动引导程序只会认识自己分区的内核文件以及其他的启动引导程序。</p>
-<h1 id="关于挂载"><a href="#关于挂载" class="headerlink" title="关于挂载"></a>关于挂载</h1><p>挂载，就是利用一个目录当作入口，将磁盘分区的数据放在该目录下。也就是说，进入该目录即可访问该分区的数据。</p>
-<hr>
-<p>以上就是整本书0、1、2章的整理与学习记录。前面偏理论多一点，因此记录下的知识点也多而杂，有些到现在也不能完全明白。不过后面会对每个点进行详细的讲解，所以就先姑且搁置到这吧😀。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-    
-    </div>
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/06/30/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E7%BC%96%E8%AF%91%E5%A4%8D%E4%B9%A0%E9%9A%8F%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="syj">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/pic2.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/30/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E7%BC%96%E8%AF%91%E5%A4%8D%E4%B9%A0%E9%9A%8F%E8%AE%B0/" itemprop="url">形式语言与编译复习随记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-30T10:14:53+08:00">
-                2020-06-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E7%BC%96%E8%AF%91/" itemprop="url" rel="index">
-                    <span itemprop="name">形式语言与编译</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2.6k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  9
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>写在前面</p>
-<p>这些文字是我在大二下学期复习形式语言与编译时顺手记录下来的，基本涵盖了期末考试中可能涉及到的所有重点。本随记旨在归纳整理思路，并没有对实现的细节加以阐释。考试以前，手里能有一份自己编写的复习资料，心里很是踏实。</p>
-<p>这学期由于疫情原因，这门课全程是以网课的方式进行授课的。无意间在B站发现了国防科技大学王挺老师的编译原理慕课，讲解得十分透彻清晰，听完有如沐春风之感，特此附上<a href="https://www.bilibili.com/video/BV1dj411f7AR/" target="_blank" rel="noopener">链接</a>，希望好资源能对更多人有所裨益。</p>
-<hr>
-<h1 id="编译绪论"><a href="#编译绪论" class="headerlink" title="编译绪论"></a>编译绪论</h1><h2 id="编译过程"><a href="#编译过程" class="headerlink" title="编译过程"></a>编译过程</h2><p>词法分析→语法分析→语义分析→中间代码生成→优化→目标代码生成</p>
-<h2 id="编译器前后端"><a href="#编译器前后端" class="headerlink" title="编译器前后端"></a>编译器前后端</h2><h3 id="前端：和源语言有关和目标机无关"><a href="#前端：和源语言有关和目标机无关" class="headerlink" title="前端：和源语言有关和目标机无关"></a>前端：和源语言有关和目标机无关</h3><p>词法分析、语法分析、语义分析、中间代码生成和部分优化</p>
-<h3 id="后端：只和中间语言有关"><a href="#后端：只和中间语言有关" class="headerlink" title="后端：只和中间语言有关"></a>后端：只和中间语言有关</h3><p>优化和目标代码生成</p>
-<h1 id="词法分析"><a href="#词法分析" class="headerlink" title="词法分析"></a>词法分析</h1><h2 id="词法分析器"><a href="#词法分析器" class="headerlink" title="词法分析器"></a>词法分析器</h2><p>输入源程序，输出单词符号</p>
-<h2 id="单词符号的设计"><a href="#单词符号的设计" class="headerlink" title="单词符号的设计"></a>单词符号的设计</h2><ul>
-<li><p>标识符一种</p>
-</li>
-<li><p>常数按类型分种</p>
-</li>
-<li><p>关键字可总属一种/一字一种</p>
-</li>
-<li><p>运算符一符一种</p>
-</li>
-<li><p>界符一符一种</p>
-</li>
-</ul>
-<h2 id="文法分类"><a href="#文法分类" class="headerlink" title="文法分类"></a>文法分类</h2><ul>
-<li><p>0型文法——递归可枚举——图灵机</p>
-</li>
-<li><p>1型文法——上下文有关——/</p>
-</li>
-<li><p>2型文法——上下文无关——PDA</p>
-</li>
-<li><p>3型文法——正规文法——DFA/NFA</p>
-</li>
-</ul>
-<h1 id="有穷自动机"><a href="#有穷自动机" class="headerlink" title="有穷自动机"></a>有穷自动机</h1><h2 id="DFA"><a href="#DFA" class="headerlink" title="DFA"></a>DFA</h2><p><em>A=(Q,Σ,δ,q0,F)</em><br></p>
-<ul>
-<li>Q：状态集合</li>
-<li>Σ：输入符号集合</li>
-<li>δ：转移函数</li>
-<li>q0是起始状态</li>
-<li>F是接受状态</li>
-</ul>
-<h2 id="NFA"><a href="#NFA" class="headerlink" title="NFA"></a>NFA</h2><p>转移表中每一项都是一个集合，即使只有一个可达状态也是一个集合，没有可达状态就是空集。</p>
-<h2 id="NFA转DFA——子集构造法，惰性求值"><a href="#NFA转DFA——子集构造法，惰性求值" class="headerlink" title="NFA转DFA——子集构造法，惰性求值"></a>NFA转DFA——子集构造法，惰性求值</h2><p>ε-NFA转DFA与一般NFA转DFA的区别是：DFA开始集合是ε-NFA开始集合的ECLOSE。</p>
-<h2 id="求ECLOSE-q"><a href="#求ECLOSE-q" class="headerlink" title="求ECLOSE(q)"></a>求ECLOSE(q)</h2><p>从q出发寻找所有ε可达的符号，将其加入ECLOSE(q)，然后对新加入的符号重复这一操作，直到ECLOSE(q)不再变大。</p>
-<h2 id="DFA最小化"><a href="#DFA最小化" class="headerlink" title="DFA最小化"></a>DFA最小化</h2><ul>
-<li><p>状态等价：对两个状态输入任意合法的符号串，结果要么是都接受，要么是都不接受。</p>
-</li>
-<li><p>填表算法：接受状态和非接受状态不等价，以此为基础对每对状态进行检验…</p>
-</li>
-<li><p>证明两个DFA等价：将两个DFA的转移图看作一个DFA的转移图，对这个新的DFA进行填表法。若最终两个原DFA的起始状态等价，则证明这两个DFA等价。</p>
-</li>
-<li><p>DFA最小化：把所有等价状态归为一类。</p>
-</li>
-</ul>
-<h1 id="正则语言"><a href="#正则语言" class="headerlink" title="正则语言"></a>正则语言</h1><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>三种运算：连接（两个语言各取一个串相连，排列组合，注意有顺序）、并（两个语言取并集）、闭包（语言中取任意个串重复0~多次）</p>
-<h2 id="正则语言的泵引理"><a href="#正则语言的泵引理" class="headerlink" title="正则语言的泵引理"></a>正则语言的泵引理</h2><p>用于证明该语言不是正则语言。</p>
-<p>证明时不能指定n是多少，但可以用n来规定一个正则表达式。</p>
-<h1 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h1><h2 id="产生范式的步骤"><a href="#产生范式的步骤" class="headerlink" title="产生范式的步骤"></a>产生范式的步骤</h2><ol>
-<li>去除可空产生式</li>
-<li>去除单位产生式</li>
-<li>去除无用符号</li>
-</ol>
-<h2 id="去除可空产生式"><a href="#去除可空产生式" class="headerlink" title="去除可空产生式"></a>去除可空产生式</h2><ol>
-<li>求可空集合</li>
-<li>对于含有可空符号的产生式进行排列组合，由原来的产生式分裂成空/非空两类产生式</li>
-</ol>
-<h2 id="去除单位产生式"><a href="#去除单位产生式" class="headerlink" title="去除单位产生式"></a>去除单位产生式</h2><ol>
-<li><p>找单位产生式，求出所有单位对</p>
-</li>
-<li><p>对于每个单位对<em>(A,B)</em>，把所有的产生式<em>A→B</em>加入产生式集合P，其中<em>B→α</em>是P中的非单位产生式。（非形式地说，就是把所有单位产生式的“中介符号”消除掉）</p>
-</li>
-</ol>
-<h2 id="去除无用符号（所有含有该符号的产生式都要去除）"><a href="#去除无用符号（所有含有该符号的产生式都要去除）" class="headerlink" title="去除无用符号（所有含有该符号的产生式都要去除）"></a>去除无用符号（所有含有该符号的产生式都要去除）</h2><ol>
-<li><p>有用的符号：产生的且可达的<br>不是有用符号的是无用符号</p>
-</li>
-<li><p>判断有用符号：先判断产生的，再判断可达的</p>
-<ul>
-<li><p>求可生成集合</p>
-<ul>
-<li><p>每个终结符是产生的</p>
-</li>
-<li><p>若有<em>A→α</em>且<em>α</em>中的符号都是产生的，则A也是产生的。（由后向前）</p>
-</li>
-</ul>
-</li>
-<li><p>求可达集合</p>
-<ul>
-<li><p>开始符号是可达的</p>
-</li>
-<li><p>若A可达，所有以A为产生式头的产生式体中的符号也是可达的。（由前向后）</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="构建乔姆斯基范式"><a href="#构建乔姆斯基范式" class="headerlink" title="构建乔姆斯基范式"></a>构建乔姆斯基范式</h2><ol>
-<li><p>产生式只有两种形式</p>
-<ul>
-<li><em>A→BC</em></li>
-<li><em>A→α</em></li>
-</ul>
-</li>
-<li><p>方法：打断重排</p>
-<ul>
-<li><p>对于终结符，引入<em>A→α</em>使产生式要么全是非终结符，要么是前面这种形式</p>
-</li>
-<li><p>对于较长只有变元的产生式，采取引入变元的方式将长产生式打断成短产生式</p>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="上下文无关语言"><a href="#上下文无关语言" class="headerlink" title="上下文无关语言"></a>上下文无关语言</h1><h2 id="上下文无关文法定义"><a href="#上下文无关文法定义" class="headerlink" title="上下文无关文法定义"></a>上下文无关文法定义</h2><p><em>G=(V,T,P,S)</em></p>
-<p>其中V是变元集合，T是终结符号集，P是产生式集合，S是初始符号集合。</p>
-<h2 id="推导、最左推导"><a href="#推导、最左推导" class="headerlink" title="推导、最左推导"></a>推导、最左推导</h2><ul>
-<li>推导：由开始符号开始，通过产生式一步步得到目标字符串。</li>
-<li>最左推导：每次推导只替换最左边的变元。</li>
-</ul>
-<h2 id="判定歧义文法"><a href="#判定歧义文法" class="headerlink" title="判定歧义文法"></a>判定歧义文法</h2><p>文法中有一个串，含有多于一种的语法分析树。</p>
-<h1 id="下推自动机"><a href="#下推自动机" class="headerlink" title="下推自动机"></a>下推自动机</h1><h2 id="PDA定义"><a href="#PDA定义" class="headerlink" title="PDA定义"></a>PDA定义</h2><p><em>P=(Q,Σ,T,δ,q0,Z0,F)</em></p>
-<ul>
-<li><p>Q：状态的有穷集合</p>
-</li>
-<li><p>Σ：输入符号的有穷集合</p>
-</li>
-<li><p>T：有限的堆栈字母表</p>
-</li>
-<li><p>δ：转移函数</p>
-</li>
-<li><p>q0：初始状态</p>
-</li>
-<li><p>Z0：初始符号（堆栈中）</p>
-</li>
-<li><p>F：接受状态</p>
-</li>
-</ul>
-<h2 id="转移函数"><a href="#转移函数" class="headerlink" title="转移函数"></a>转移函数</h2><p>基本格式<em>δ(q,a,X)=(p,γ)</em></p>
-<p>表示当状态为q，输入字符为a，栈顶符号X时，转移到状态p，栈顶的X被替换成γ。</p>
-<h2 id="状态转移图"><a href="#状态转移图" class="headerlink" title="状态转移图"></a>状态转移图</h2><p>由q指向p：状态从q转向p</p>
-<p>线上的内容<em>a,X/α</em>：输入符号是a，栈顶符号是X，用α替换X。</p>
-<h2 id="PDA的瞬时描述"><a href="#PDA的瞬时描述" class="headerlink" title="PDA的瞬时描述"></a>PDA的瞬时描述</h2><p>三元组<em>(q,w,γ)</em>：q是当前状态，w是剩余的输入串，γ是堆栈内容。</p>
-<h2 id="以终结状态方式接受-amp-以空栈方式接受"><a href="#以终结状态方式接受-amp-以空栈方式接受" class="headerlink" title="以终结状态方式接受&amp;以空栈方式接受"></a>以终结状态方式接受&amp;以空栈方式接受</h2><ol>
-<li><p>以终结状态方式接受<br>当输入串消耗完成后，PDA恰好停留在一个接受状态，证明输入串被接受。</p>
-</li>
-<li><p>以空栈方式接受<br>当输入串消耗完成后，PDA的栈恰好为空，证明输入串被接受。</p>
-</li>
-<li><p>空栈方式到接受状态方式<br>在开始分析前先向栈底压入一个标记X0，当输入串消耗完后，若栈顶恰好是X0，则无条件转移到接受状态。<br>为此，要新建一个开始状态用来把X0压栈，一个终结状态用来被无条件转移到这里。</p>
-</li>
-<li><p>接受状态方式到空栈方式<br>为每个原接受状态建立一条空转移到新的终结状态，并且在这个过程中弹出栈中所有剩余的东西。</p>
-</li>
-</ol>
-<h1 id="自上而下分析——LL（1）文法"><a href="#自上而下分析——LL（1）文法" class="headerlink" title="自上而下分析——LL（1）文法"></a>自上而下分析——LL（1）文法</h1><p>拿到了一个文法，希望通过构建LL（1）文法为输入串寻找一个最左推导</p>
-<h2 id="消除左递归"><a href="#消除左递归" class="headerlink" title="消除左递归"></a>消除左递归</h2><ol>
-<li>消除间接左递归</li>
-<li>消除直接左递归（排序、代入）</li>
-<li>消除多余项</li>
-</ol>
-<h2 id="消除回溯"><a href="#消除回溯" class="headerlink" title="消除回溯"></a>消除回溯</h2><p>提取左公因子</p>
-<h2 id="构建FIRST集合"><a href="#构建FIRST集合" class="headerlink" title="构建FIRST集合"></a>构建FIRST集合</h2><ol>
-<li><p>对于终结符，FIRST集合只包含它本身。</p>
-</li>
-<li><p>对于非终结符，若有产生式X→a…，则把a加入到FIRST(X)中；若有X→ε，则ε同样也加入。</p>
-</li>
-<li><p>分三类</p>
-<ul>
-<li>若有X→Y…且Y是非终结符，则把FIRST(Y)中所有非空元素加入到FIRST(X)中；</li>
-<li>若有X→Y1Y2Y3…且Y1、Y2、Y3…是非终结符，若Y1~Yi-1的FIRST集都含有ε，则把FIRST(Yi)中所有非ε元素加入到FIRST(X)中；</li>
-<li>若有X→Y1Y2Y3…且Y1、Y2、Y3…是非终结符，若Yi的FIRST集都含有ε，则把ε加入到FIRST(X)中。</li>
-</ul>
-</li>
-</ol>
-<h2 id="构建FOLLOW集合"><a href="#构建FOLLOW集合" class="headerlink" title="构建FOLLOW集合"></a>构建FOLLOW集合</h2><ol>
-<li><p>对于开始符号，把#放到FOLLOW中。</p>
-</li>
-<li><p>若有A→αBβ，则把FIRST(β)/{ε}的所有元素加到FOLLOW(B)中。</p>
-</li>
-<li><p>若有A→αB，或A→αBβ而FIRST(β)中有ε，则把FOLLOW(A)中元素加到FOLLOW(B)中。</p>
-</li>
-</ol>
-<h2 id="构建LL（1）分析表"><a href="#构建LL（1）分析表" class="headerlink" title="构建LL（1）分析表"></a>构建LL（1）分析表</h2><p>对象：文法中的每个产生式A→α</p>
-<ul>
-<li>对于终结符a属于FIRST(α)，把A→α加到M[A,a]中。</li>
-<li>若ε属于FIRST(α),则对任何b属于FOLLOW(A)，把A→α加到M[A,b]中。</li>
-</ul>
-<h1 id="自下而上分析——LR-0-amp-SLR-0-文法"><a href="#自下而上分析——LR-0-amp-SLR-0-文法" class="headerlink" title="自下而上分析——LR(0)&amp;SLR(0)文法"></a>自下而上分析——LR(0)&amp;SLR(0)文法</h1><h2 id="短语、直接短语、句柄"><a href="#短语、直接短语、句柄" class="headerlink" title="短语、直接短语、句柄"></a>短语、直接短语、句柄</h2><ul>
-<li>短语：若有S→αAδ且A→β， 那么β是句型αAδ相对A的短语</li>
-<li>直接短语：A能一步推导出β</li>
-<li>句柄：最左直接短语。在语法树中，句柄是最左子树的端末结的自左至右排列，该子树有且只有两层。</li>
-</ul>
-<h2 id="算符优先分析"><a href="#算符优先分析" class="headerlink" title="算符优先分析"></a>算符优先分析</h2><p>略。</p>
-<h2 id="LR分析法"><a href="#LR分析法" class="headerlink" title="LR分析法"></a>LR分析法</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>构造一种自下而上分析法，从而求出输入串的最左规约</p>
-<h3 id="核心：ACTION表-amp-GOTO表"><a href="#核心：ACTION表-amp-GOTO表" class="headerlink" title="核心：ACTION表&amp;GOTO表"></a>核心：ACTION表&amp;GOTO表</h3><ol>
-<li>ACTION表决定移进还是规约。若移进，ACTION告诉了移进后的状态；若规约，ACTION告诉了用哪条产生式规约。</li>
-<li>GOTO表决定规约后的新状态是什么。</li>
-<li>规约时，注意符号栈和状态栈的长度始终相等，若规约串的长度为a，则要同时从符号栈和状态栈中弹出a个符号/状态，然后再移进规约后的新符号和新状态。</li>
-</ol>
-<h3 id="构建思路"><a href="#构建思路" class="headerlink" title="构建思路"></a>构建思路</h3><p>构建拓广文法-&gt;构建CLOSURE闭包&amp;GO函数-&gt;构建项目集规范族-&gt;构造LR(0)的ACTION表&amp;GOTO表</p>
-<h3 id="具体做法"><a href="#具体做法" class="headerlink" title="具体做法"></a>具体做法</h3><ol>
-<li>构建拓广文法：在原文法前加入一个新开始状态S’，目的是这样会有一个唯一的接受状态，S’→S·</li>
-<li>构建CLOSURE闭包<ul>
-<li>I的任意项目都属于CLOSURE(I)</li>
-<li>若A→α·Bβ属于CLOSURE(I)，则对B的任何产生式B→γ，把B→·γ加入到CLOSURE(I)中</li>
-<li>重复上述操作直到闭包不再变大</li>
-</ul>
-</li>
-<li>构建GO函数<ul>
-<li>直观理解：GO(I,X)=CLOSURE(J)就是在状态为I的时候，输入符号为X时转移到了状态J。然后再对J求闭包构成下一个状态。</li>
-</ul>
-</li>
-<li>构建项目族规范集<ul>
-<li>从开始符号开始，先构建开始符号的CLOSURE(S’)闭包</li>
-<li>对每个文法符号X，构建GO(S’,X)</li>
-<li>对每个GO函数产生的新项目，构建其CLOSORE闭包</li>
-<li>重复上述过程，直到项目族规范集不再增大</li>
-</ul>
-</li>
-<li>构建LR(0)的ACTION表&amp;GOTO表</li>
-</ol>
-<h2 id="SLR分析法"><a href="#SLR分析法" class="headerlink" title="SLR分析法"></a>SLR分析法</h2><p>构造过程和LR分析法基本相同，唯一不同的是在判断规约动作A→α·（设置ACTION[K,a]）的时候，需要保证a属于FOLLOW(A)。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-    
-    </div>
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/06/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Adebug%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="syj">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/pic2.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Adebug%E8%AE%B0%E5%BD%95/" itemprop="url">博客搭建及debug记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-27T16:53:51+08:00">
-                2020-06-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">博客搭建</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  840
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="搭建博客的第一天"><a href="#搭建博客的第一天" class="headerlink" title="搭建博客的第一天"></a>搭建博客的第一天</h1><ul>
-<li>使用github+Hexo搭建了一个简易的网站</li>
-</ul>
-<p><strong>参考教程来自<a href="https://zhuanlan.zhihu.com/p/78467553" target="_blank" rel="noopener">这里</a></strong></p>
-<h1 id="搭建博客的第二天"><a href="#搭建博客的第二天" class="headerlink" title="搭建博客的第二天"></a>搭建博客的第二天</h1><ul>
-<li>更换主题——Next</li>
-<li>修改博主头像</li>
-<li>修改博主名称</li>
-<li>右上角实现了<em>fork me on Github</em></li>
-<li>加入了动态背景</li>
-<li>在每篇文章末尾加入了分割线</li>
-<li>主页文章添加了阴影效果</li>
-<li>在网站底部添加了访问量统计、网站字数统计</li>
-<li>添加了文章热度（但是还无法显示）</li>
-<li>设置了网站的favicon（是一只奶黄色的咖啡杯）</li>
-<li>每篇文章添加了字数统计和预计阅读时间</li>
-<li>添加了加载进度条（样式还不是很满意）</li>
-<li>文章底部可以添加版权信息了！</li>
-<li>添加了分享功能</li>
-<li>添加了置顶功能 被置顶的文章会显示一个大头针</li>
-<li>完善了侧边导航页 包括<em>首页、关于、标签、分类、归档</em></li>
-</ul>
-<p><strong>改造博客的指导都来自<a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">这篇文章</a> 中途遇见了一些小问题也通过百度解决了 在此感谢一下</strong></p>
-<h1 id="搭建博客的第三天"><a href="#搭建博客的第三天" class="headerlink" title="搭建博客的第三天"></a>搭建博客的第三天</h1><p>大框架已经完成 今天就剩下一些收尾美化工作了</p>
-<ul>
-<li><p>隐藏底部<em>powered by hexo</em>字样</p>
-</li>
-<li><p>更改了博客名和博主名（暂时想不出好的博客名了 拿这个凑合着先用吧</p>
-</li>
-<li><p>更换了加载动画 以前那个手机端看的话背景在没加载完成的情况下一直在闪 十分费眼睛…</p>
-</li>
-<li><p>添加了博客访问人数 和访问次数区分开来</p>
-</li>
-<li><p>添加了每篇文章的热度（虽然自带的🔥icon不太像</p>
-</li>
-<li><p>剩下的完善工作还有：<strong>关于</strong>页面的完善等</p>
-<p>折腾了三天 累了 上学期资料的整理及上传就过一段时间再整吧 接下来准备下一段的学习任务</p>
-</li>
-</ul>
-<h1 id="关于next主题侧边栏日志链接丢失问题"><a href="#关于next主题侧边栏日志链接丢失问题" class="headerlink" title="关于next主题侧边栏日志链接丢失问题"></a>关于next主题侧边栏日志链接丢失问题</h1><p>直接使用next主题，点击侧边栏的“日志”超链接时会发现报错：</p>
-<p>Cannot GET /archives/%7C%7C%20list/</p>
-<p>解决方法：在/themes/next/layout/_marco/sidebar.swig中，将</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&#123;&#123; url_for(theme.menu.archives).split(&#39;||&#39;)[0] | trim &#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>改成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&#123;&#123;url_for(theme.menu.archives.split(&#39;||&#39;)[0])| trim&#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>即可。</p>
-<p>听说是url_for函数把||转义了，所以造成找不到正确的链接。</p>
-<p>完美解决！😊</p>
-<p>这里是<a href="https://blog.csdn.net/qq_38765633/article/details/104929566" target="_blank" rel="noopener">参考资料</a></p>
-<h1 id="关于next主题侧边页面的丢失问题"><a href="#关于next主题侧边页面的丢失问题" class="headerlink" title="关于next主题侧边页面的丢失问题"></a>关于next主题侧边页面的丢失问题</h1><p>直接拿到的next主题自身有些小bug❌，比如点击侧边栏的“关于”、“标签”、“分类”、”归档“，都会报错说找不到这个页面，下面是解决方案。</p>
-<p>在blog目录下打开Git Bash，新建页面：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo newpage about</span><br><span class="line">hexo newpage archives</span><br><span class="line">hexo newpage categories</span><br><span class="line">hexo newpage home</span><br><span class="line">hexo newpage tags</span><br></pre></td></tr></table></figure>
-
-<p>然后打开next主题的配置文件/theme/next/_config.yml，找到menu部分：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || heartbeat</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable/Disable menu icons.</span></span><br><span class="line"><span class="attr">menu_icons:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>这里他的每一个||前面都多了一个空格，因此把空格删去就好了，改成下面的代码：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/||</span> <span class="string">home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/||</span> <span class="string">user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/||</span> <span class="string">tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/||</span> <span class="string">th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/||</span> <span class="string">archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || heartbeat</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable/Disable menu icons.</span></span><br><span class="line"><span class="attr">menu_icons:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>重新生成博客，就会发现侧边栏的几个链接都能用啦😄~</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-    
-    </div>
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+
 
 
           </div>
@@ -2321,7 +2589,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2332,7 +2600,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2343,7 +2611,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2393,7 +2661,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共9.3k字</span>
+  <span class="post-count">博客全站共14.4k字</span>
 </div>
 
 <br>

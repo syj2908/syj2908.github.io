@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="随记,计算机组成原理," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、概述指令系统是一台计算机所具有的全部机器指令的集合，由操作码和地址码组成。 指令$\begin{cases}宏指令\机器指令\微指令\end{cases}$ 二、指令系统的发展CISC用一条复杂的新指令代替原先需要一串指令完成的功能，减少访问主存的次数以提高速度。 指令系统庞大复杂，大多数复杂指令很少用到。 RISC只包含使用频率高的少量指令，并提供一些必要指令以支持高级语言。  优先选取使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成原理学习随记（二）">
+<meta property="og:url" content="https://syj2908.github.io/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
+<meta property="og:site_name" content="syj&#39;s Blog">
+<meta property="og:description" content="一、概述指令系统是一台计算机所具有的全部机器指令的集合，由操作码和地址码组成。 指令$\begin{cases}宏指令\机器指令\微指令\end{cases}$ 二、指令系统的发展CISC用一条复杂的新指令代替原先需要一串指令完成的功能，减少访问主存的次数以提高速度。 指令系统庞大复杂，大多数复杂指令很少用到。 RISC只包含使用频率高的少量指令，并提供一些必要指令以支持高级语言。  优先选取使用">
+<meta property="article:published_time" content="2020-09-26T13:03:47.000Z">
+<meta property="article:modified_time" content="2020-09-26T13:05:06.707Z">
+<meta property="article:author" content="syj">
+<meta property="article:tag" content="随记">
+<meta property="article:tag" content="计算机组成原理">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://syj2908.github.io/2020/09/26/计算机组成原理学习随记（二）/"/>
+
+
+
+
+
+  <title>计算机组成原理学习随记（二） | syj's Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/syj2908" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>    
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">syj's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="syj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/pic2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="syj's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机组成原理学习随记（二）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-26T21:03:47+08:00">
+                2020-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机组成原理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-fire"></i> 热度
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>指令系统是一台计算机所具有的全部机器指令的集合，由操作码和地址码组成。</p>
+<p>指令$\begin{cases}宏指令\机器指令\微指令\end{cases}$</p>
+<h1 id="二、指令系统的发展"><a href="#二、指令系统的发展" class="headerlink" title="二、指令系统的发展"></a>二、指令系统的发展</h1><h2 id="CISC"><a href="#CISC" class="headerlink" title="CISC"></a>CISC</h2><p>用一条复杂的新指令代替原先需要一串指令完成的功能，减少访问主存的次数以提高速度。</p>
+<p>指令系统庞大复杂，大多数复杂指令很少用到。</p>
+<h2 id="RISC"><a href="#RISC" class="headerlink" title="RISC"></a>RISC</h2><p>只包含使用频率高的少量指令，并提供一些必要指令以支持高级语言。</p>
+<ul>
+<li>优先选取使用频率高的简单指令</li>
+<li>指令长度固定、格式种类少、寻址方式种类少。各字段划分较一致，功能也比较规整。</li>
+<li>只有LOAD\STORE可以访问存储器，其余在寄存器操作。</li>
+<li>有大量通用寄存器。</li>
+<li>CPU采用流水结构。</li>
+<li>控制单元设计以硬布线控制逻辑为主。</li>
+<li>采用编译优化技术。</li>
+</ul>
+<h1 id="三、指令系统的功能"><a href="#三、指令系统的功能" class="headerlink" title="三、指令系统的功能"></a>三、指令系统的功能</h1><h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><ul>
+<li>完整性</li>
+<li>规整性<ul>
+<li>对称性</li>
+<li>匀齐性</li>
+<li>一致性</li>
+</ul>
+</li>
+<li>高效性</li>
+<li>兼容性</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="操作数类型"><a href="#操作数类型" class="headerlink" title="操作数类型"></a>操作数类型</h3><p>数据表示：机器硬件能够直接识别、指令能直接操作的数据结构</p>
+<ul>
+<li>地址</li>
+<li>数字</li>
+<li>字符</li>
+<li>逻辑数</li>
+</ul>
+<p>字节或半字数据加载到32位寄存器时要扩充，有符号数高位用符号位填充，无符号数用0填充。</p>
+<h3 id="地址空间"><a href="#地址空间" class="headerlink" title="地址空间"></a>地址空间</h3><p>地址空间$\begin{cases}通用寄存器\主存储器\IO设备\end{cases}$</p>
+<ul>
+<li><p>三地址空间</p>
+</li>
+<li><p>两地址空间</p>
+<p>主存地址高端划分出部分作为IO设备地址。</p>
+<p>能够访问主存的指令都能访问IO设备，但会影响速度。</p>
+</li>
+<li><p>一地址空间</p>
+<p>最低端是通用寄存器，最高端是IO设备地址，中间是主存。</p>
+</li>
+</ul>
+<h3 id="编址方式"><a href="#编址方式" class="headerlink" title="编址方式"></a>编址方式</h3><ul>
+<li><p>按字编址</p>
+</li>
+<li><p>按字节编址</p>
+<p>CPU可按字或字节访问主存。</p>
+</li>
+</ul>
+<p>字节编址顺序$\begin{cases}大端（低字节高地址）\小端（低字节低地址）\end{cases}$</p>
+<p>边界对齐$\begin{cases}对齐：访问字节半字单子可在一个周期内完成\不对齐：节省空间，但访问速度可能低\end{cases}$</p>
+<h1 id="四、指令格式"><a href="#四、指令格式" class="headerlink" title="四、指令格式"></a>四、指令格式</h1><h2 id="指令组成"><a href="#指令组成" class="headerlink" title="指令组成"></a>指令组成</h2><p>指令=操作码+地址码</p>
+<p>操作码提供：指令操作类型和操作数类型</p>
+<p>三种CPU结构$\begin{cases}堆栈型\累加器型\通用寄存器型(RR、RS)\end{cases}$</p>
+<h2 id="指令字长"><a href="#指令字长" class="headerlink" title="指令字长"></a>指令字长</h2><p>指令字长：包含二进制码的位数</p>
+<p>基本原则：</p>
+<ul>
+<li>指令字长尽量短</li>
+<li>信息为利用率尽量高</li>
+</ul>
+<p>登场指令字结构、变长指令字结构</p>
+<h3 id="操作码扩展技术"><a href="#操作码扩展技术" class="headerlink" title="操作码扩展技术"></a>操作码扩展技术</h3><p>等长指令字结构中，利用地址码个数较少的指令<strong>空出的地址码字段</strong>来增加<strong>操作码</strong>的位数。</p>
+<p>一般方法：先安排地址码最多的指令。</p>
+<h1 id="五、寻址方式"><a href="#五、寻址方式" class="headerlink" title="五、寻址方式"></a>五、寻址方式</h1><p>$\begin{cases}指令寻址\数据寻址\end{cases}$</p>
+<p>形式地址：符号地址。</p>
+<p>有效地址：内存在本程序中的相对地址。</p>
+<h2 id="指令寻址"><a href="#指令寻址" class="headerlink" title="指令寻址"></a>指令寻址</h2><p>$\begin{cases}顺序寻址\跳跃寻址\end{cases}$</p>
+<h2 id="数据寻址"><a href="#数据寻址" class="headerlink" title="数据寻址"></a>数据寻址</h2><h3 id="基本寻址"><a href="#基本寻址" class="headerlink" title="基本寻址"></a>基本寻址</h3><p>$\begin{cases}立即寻址\寄存器寻址\存储器寻址\堆栈寻址\end{cases}$</p>
+<h4 id="1-立即寻址"><a href="#1-立即寻址" class="headerlink" title="1.立即寻址"></a>1.立即寻址</h4><p>操作数直接在指令的地址码字段给出（立即数）。</p>
+<p>$eg:MOV EAX, 100$</p>
+<h4 id="2-寄存器寻址"><a href="#2-寄存器寻址" class="headerlink" title="2.寄存器寻址"></a>2.寄存器寻址</h4><p>操作数已经在寄存器中，或者操作结果要存回通用寄存器中。</p>
+<p>$eg: MOV EAX, 100$</p>
+<h4 id="3-存储器寻址"><a href="#3-存储器寻址" class="headerlink" title="3.存储器寻址"></a>3.存储器寻址</h4><p>$\begin{cases}直接寻址\存储器间接寻址\寄存器间接寻址\偏移寻址\段寻址\end{cases}$</p>
+<h5 id="①-直接寻址"><a href="#①-直接寻址" class="headerlink" title="① 直接寻址"></a>① 直接寻址</h5><p>指令中地址码字段就是操作数或下一条指令的有效地址。</p>
+<p>$eg：MOV EAX, [100]$</p>
+<h5 id="②-存储器间接寻址"><a href="#②-存储器间接寻址" class="headerlink" title="② 存储器间接寻址"></a>② 存储器间接寻址</h5><p>指令中地址码字段是操作数<strong>地址的地址</strong>。</p>
+<p>间接寻址一次称为一次间接，可以有多次间接。</p>
+<p>间接寻址有一个标志位$\begin{cases}=0：后跟的地址码即有效地址\=1：后跟的依旧是地址的地址，继续套娃\end{cases}$</p>
+<p>第一个间接寻址标志由指令给出，剩下的由访问主存所取出的地址码给出（通常是第一位）。</p>
+<p>一次间接寻址的最大寻址范围是$2^m$字，两次间接寻址的最大寻址范围是$2^{m-1}$字。</p>
+<p>$eg: JMP  word  ptr  [100]$</p>
+<h5 id="③-寄存器间接寻址"><a href="#③-寄存器间接寻址" class="headerlink" title="③ 寄存器间接寻址"></a>③ 寄存器间接寻址</h5><p>形式地址给出的是通用寄存器的编号。</p>
+<p>对于一次寄存器间接寻址，寄存器中的内容就是有效地址。</p>
+<p>寄存器间接寻址的范围取决于寄存器位数（也等于机器字长）。</p>
+<p>$eg: MOV EAX, [EBX]$</p>
+<h5 id="④-偏移寻址"><a href="#④-偏移寻址" class="headerlink" title="④ 偏移寻址"></a>④ 偏移寻址</h5><p>形式上：直接寻址+寄存器间接寻址</p>
+<p>$EA=(R_i)+A$，其中A是有符号数，通常用补码表示。</p>
+<p>$\begin{cases}相对寻址\变址寻址\基址寻址\end{cases}$</p>
+<h6 id="i-相对寻址"><a href="#i-相对寻址" class="headerlink" title="i. 相对寻址"></a>i. 相对寻址</h6><p>$EA=(PC)+A$</p>
+<p>寻址范围：$(PC)-2^{k-1}$~$(PC)+2^{k-1}-1$</p>
+<p>指令间相对距离不变，有利于程序在内存中浮动。</p>
+<h6 id="ii-变址寻址"><a href="#ii-变址寻址" class="headerlink" title="ii. 变址寻址"></a>ii. 变址寻址</h6><p>$EA=(R_i)+A$</p>
+<p>变址寄存器中存放地址的修改量，每次会自动调整，形式地址给出地址的起始量。</p>
+<p>寻址范围$2^n$，n是变址寄存器的位数。</p>
+<h6 id="iii-基址寻址"><a href="#iii-基址寻址" class="headerlink" title="iii. 基址寻址"></a>iii. 基址寻址</h6><p>基址寻址通常用于实现操作系统对用户程序的动态定位。</p>
+<p><strong>变址寻址与基址寻址异同</strong>：变址寻址重在偏移量的改变；基址寻址重在起始地址的不同。</p>
+<h5 id="⑤段寻址"><a href="#⑤段寻址" class="headerlink" title="⑤段寻址"></a>⑤段寻址</h5><p>段寻址是硬件自动完成的，过程对用户透明。</p>
+<p>段寻址方式中的段内偏移量就是EA。</p>
+<h4 id="4-堆栈寻址"><a href="#4-堆栈寻址" class="headerlink" title="4. 堆栈寻址"></a>4. 堆栈寻址</h4><p>利用堆栈存取数据。指令长度短，但运算速度低。</p>
+<h3 id="复合寻址"><a href="#复合寻址" class="headerlink" title="复合寻址"></a>复合寻址</h3><p>关键问题是计算顺序。</p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+    </div>
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">计算机组成原理学习随记（二）</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 syj 的个人博客">syj</a></p>
+  <p><span>发布时间:</span>2020年09月26日 - 21:03</p>
+  <p><span>最后更新:</span>2020年09月26日 - 21:05</p>
+  <p><span>原始链接:</span><a href="/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" title="计算机组成原理学习随记（二）">https://syj2908.github.io/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://syj2908.github.io/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E9%9A%8F%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i>随记</a>
+          
+            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag"><i class="fa fa-tag"></i>计算机组成原理</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" rel="next" title="计算机网络学习随记（二）">
+                <i class="fa fa-chevron-left"></i> 计算机网络学习随记（二）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" rel="prev" title="计算机组成原理学习随记（一）">
+                计算机组成原理学习随记（一） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/pic2.jpg"
+                alt="syj" />
+            
+              <p class="site-author-name" itemprop="name">syj</p>
+              <p class="site-description motion-element" itemprop="description">大二CSer的学习 摸鱼记录:)</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、概述"><span class="nav-number">1.</span> <span class="nav-text">一、概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、指令系统的发展"><span class="nav-number">2.</span> <span class="nav-text">二、指令系统的发展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CISC"><span class="nav-number">2.1.</span> <span class="nav-text">CISC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RISC"><span class="nav-number">2.2.</span> <span class="nav-text">RISC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、指令系统的功能"><span class="nav-number">3.</span> <span class="nav-text">三、指令系统的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计原则"><span class="nav-number">3.1.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">3.2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#操作数类型"><span class="nav-number">3.2.1.</span> <span class="nav-text">操作数类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#地址空间"><span class="nav-number">3.2.2.</span> <span class="nav-text">地址空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编址方式"><span class="nav-number">3.2.3.</span> <span class="nav-text">编址方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、指令格式"><span class="nav-number">4.</span> <span class="nav-text">四、指令格式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#指令组成"><span class="nav-number">4.1.</span> <span class="nav-text">指令组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令字长"><span class="nav-number">4.2.</span> <span class="nav-text">指令字长</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#操作码扩展技术"><span class="nav-number">4.2.1.</span> <span class="nav-text">操作码扩展技术</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、寻址方式"><span class="nav-number">5.</span> <span class="nav-text">五、寻址方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#指令寻址"><span class="nav-number">5.1.</span> <span class="nav-text">指令寻址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据寻址"><span class="nav-number">5.2.</span> <span class="nav-text">数据寻址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本寻址"><span class="nav-number">5.2.1.</span> <span class="nav-text">基本寻址</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-立即寻址"><span class="nav-number">5.2.1.1.</span> <span class="nav-text">1.立即寻址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-寄存器寻址"><span class="nav-number">5.2.1.2.</span> <span class="nav-text">2.寄存器寻址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-存储器寻址"><span class="nav-number">5.2.1.3.</span> <span class="nav-text">3.存储器寻址</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#①-直接寻址"><span class="nav-number">5.2.1.3.1.</span> <span class="nav-text">① 直接寻址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#②-存储器间接寻址"><span class="nav-number">5.2.1.3.2.</span> <span class="nav-text">② 存储器间接寻址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#③-寄存器间接寻址"><span class="nav-number">5.2.1.3.3.</span> <span class="nav-text">③ 寄存器间接寻址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#④-偏移寻址"><span class="nav-number">5.2.1.3.4.</span> <span class="nav-text">④ 偏移寻址</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#i-相对寻址"><span class="nav-number">5.2.1.3.4.1.</span> <span class="nav-text">i. 相对寻址</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ii-变址寻址"><span class="nav-number">5.2.1.3.4.2.</span> <span class="nav-text">ii. 变址寻址</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#iii-基址寻址"><span class="nav-number">5.2.1.3.4.3.</span> <span class="nav-text">iii. 基址寻址</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#⑤段寻址"><span class="nav-number">5.2.1.3.5.</span> <span class="nav-text">⑤段寻址</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-堆栈寻址"><span class="nav-number">5.2.1.4.</span> <span class="nav-text">4. 堆栈寻址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复合寻址"><span class="nav-number">5.2.2.</span> <span class="nav-text">复合寻址</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">syj</span>
+
+  
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共14.4k字</span>
+</div>
+
+<br>
+
+<div class="powered-by">
+<i class="fa fa-user"></i><span id="busuanzi_container_site_uv">
+  你是第<span id="busuanzi_value_site_uv"></span>个来访的小伙伴
+</span>
+</div>
+
+<span class="post-meta-divider">|</span>
+
+<div class="powered-by">
+<i class="fa fa-eye"></i><span id="busuanzi_container_site_pv">
+  这是本站的第<span id="busuanzi_value_site_pv"></span>次访问
+</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+-->
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
