@@ -86,12 +86,12 @@
 
 
 
-<meta name="description" content="大二CSer的学习 摸鱼记录:)">
+<meta name="description" content="大三CSer陈旧、飘着灰尘的书堆">
 <meta property="og:type" content="website">
-<meta property="og:title" content="syj&#39;s Blog">
+<meta property="og:title" content="第七天堂">
 <meta property="og:url" content="https://syj2908.github.io/index.html">
-<meta property="og:site_name" content="syj&#39;s Blog">
-<meta property="og:description" content="大二CSer的学习 摸鱼记录:)">
+<meta property="og:site_name" content="第七天堂">
+<meta property="og:description" content="大三CSer陈旧、飘着灰尘的书堆">
 <meta property="article:author" content="syj">
 <meta name="twitter:card" content="summary">
 
@@ -129,7 +129,7 @@
 
 
 
-  <title>syj's Blog</title>
+  <title>第七天堂</title>
   
 
 
@@ -162,7 +162,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">syj's Blog</span>
+        <span class="site-title">第七天堂</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -269,6 +269,276 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/10/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="syj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/pic2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="第七天堂">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/10/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" itemprop="url">计算机组成原理学习随记（三）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-10T10:31:24+08:00">
+                2020-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机组成原理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一、主存储器概述"><a href="#一、主存储器概述" class="headerlink" title="一、主存储器概述"></a>一、主存储器概述</h1><h2 id="1-存储器的分类"><a href="#1-存储器的分类" class="headerlink" title="1. 存储器的分类"></a>1. 存储器的分类</h2><p>按作用分$\begin{cases}内部存储器\begin{cases}cache（主板上）\主存（“内存条”）\end{cases}\外部存储器\离线存储器\控制存储器（控制单元CU的核心）\end{cases}$</p>
+<p>由于cache是主存内容的副本，因此内存容量只包括主存容量。</p>
+<p>按存储介质分$\begin{cases}半导体存储器（主要做内部存储器）\此表面存储器\光盘存储器\end{cases}$</p>
+<p>按存取方式分$\begin{cases}随机存储器RAM：任何单元内容能被随机存取且存取时间与物理位置无关\只读存储器ROM：非易失、高可靠，常作为主存一部分存放系统程序\顺序存取存储器SAM：如磁带📼\直接存取存储器DAM：工作方式类似RAM+SAM，如磁盘存储器\相联存储器AM\end{cases}$</p>
+<p>按制造工艺分$\begin{cases}双极性存储器BJT:速度快、功耗高、价格贵，常作cache\金属氧化物半导体存储器FET：集成度高、价格低、功耗低、速度慢，常作主存\end{cases}$</p>
+<p>按信息的可保存性分$\begin{cases}电易失型半导体存储器：RAM\非电易失型半导体存储器：ROM+部分RAM\end{cases}$</p>
+<p>RAM分类$\begin{cases}SRAM：静态随机存储器。速度快、信息稳定、集成度低、功耗大、成本高，常作小容量cache。\DRAM：动态随机存储器。集成度高，功耗低，电容存在漏电现象，需要定时充电，称为“刷新”。常作主存。\NVRAM：非易失型随机存储器。SRAM+E^2PROM，有一个电池🔋保证掉电后信息得以保存。\end{cases}$</p>
+<h2 id="2-主存储器与CPU的连接"><a href="#2-主存储器与CPU的连接" class="headerlink" title="2. 主存储器与CPU的连接"></a>2. 主存储器与CPU的连接</h2><h3 id="（1）地址总线"><a href="#（1）地址总线" class="headerlink" title="（1）地址总线"></a>（1）地址总线</h3><p>地址总线位数决定可访问存储单元的最大数目（最大可寻址空间），即$0$~$2^n-1$。</p>
+<h3 id="（2）数据总线"><a href="#（2）数据总线" class="headerlink" title="（2）数据总线"></a>（2）数据总线</h3><p>数据总线位数决定了主存一次可读写的最大位数，也成存储字长。</p>
+<h3 id="（3）控制总线"><a href="#（3）控制总线" class="headerlink" title="（3）控制总线"></a>（3）控制总线</h3><p>CPU通过控制总线向主存发出操作命令。</p>
+<h2 id="3-主存的性能指标"><a href="#3-主存的性能指标" class="headerlink" title="3. 主存的性能指标"></a>3. 主存的性能指标</h2><h3 id="（1）存储容量"><a href="#（1）存储容量" class="headerlink" title="（1）存储容量"></a>（1）存储容量</h3><p>按字编址：存储单元个数×存储字长，单位b（bit），如1K×16位。</p>
+<p>按字节编址：存放的字节数，单位B（Byte），如1KB。</p>
+<h3 id="（2）存取速度"><a href="#（2）存取速度" class="headerlink" title="（2）存取速度"></a>（2）存取速度</h3><p>存储周期=存取时间+恢复时间。</p>
+<p>存储周期：连续访问两次存储器的时间间隔。</p>
+<p>存取时间：一次存储器读写操作从启动到完成所需要的时间。</p>
+<h3 id="（3）存储器带宽"><a href="#（3）存储器带宽" class="headerlink" title="（3）存储器带宽"></a>（3）存储器带宽</h3><p>单位时间内存储器存取的信息量。谈论速度时，1K=1000。</p>
+<p>存储器带宽=每个存取周期可访问的位数/存取周期。</p>
+<h1 id="半导体存储器"><a href="#半导体存储器" class="headerlink" title="半导体存储器"></a>半导体存储器</h1><h2 id="1-主存储器的基本构成"><a href="#1-主存储器的基本构成" class="headerlink" title="1. 主存储器的基本构成"></a>1. 主存储器的基本构成</h2><p>$\begin{cases}存储体\寻址系统：驱动器+译码器+MAR\读写系统：读写电路+MDR。MDR存放要写的或要读出的数据\控制电路\end{cases}$</p>
+<p>读操作过程：给出地址👉给出片选信号和读信号👉保存读出数据</p>
+<p>写操作过程：给出地址：给出片选信号和待写入数据👉给出写信号</p>
+<p>译码器地址译码$\begin{cases}线选法\重合法\end{cases}$</p>
+<ul>
+<li><p>线选法（单译码结构）</p>
+<p>线选法直接选中一个<strong>存储单元</strong>（如1K×8位的存储器，线选法地址线有10根，每次直接选中8位，即一个存储单元）。</p>
+<p>结构简单、速度快、器件用量大、成本高。</p>
+</li>
+<li><p>重合法（双译码结构）</p>
+<p>重合法将地址码分成<strong>行地址</strong>和<strong>列地址</strong>，分别由行列译码器译码，重合点即为选中的<strong>存储元</strong>。</p>
+</li>
+</ul>
+<h2 id="2-SRAM"><a href="#2-SRAM" class="headerlink" title="2. SRAM"></a>2. SRAM</h2><p>SRAM是双稳态触发器。静态：只要保持电源供电，SRAM就能稳定保存数据。</p>
+<p>SRAM写入时要双边选，读出时可单边读。</p>
+<p>SRAM是非破坏性读出。</p>
+<p>读写时序：①给地址信息👉②给输出/输入使能、片选使能👉③给出要读写的数据</p>
+<p>读出时间：从地址线上给出有效地址到数据线上出现有效且稳定的数据所需要的时间。</p>
+<p>读周期=读出时间+回复时间；写周期=写入时间+回复时间。</p>
+<h2 id="3-DRAM"><a href="#3-DRAM" class="headerlink" title="3. DRAM"></a>3. DRAM</h2><p>由MOS管和电容组成，通过电容是否充电来存储0/1。</p>
+<p>电容中电荷会慢慢泄露，因此要定时充电，称为“刷新”。</p>
+<p>DRAM常做主存，由集成度高、功耗低、速度慢的特点。</p>
+<p>从DRAM中直接读出的数据和存储数据是反向的，因此还需要增加反向电路。存储数据是同向的。</p>
+<p>DRAM是破坏性读取，读取后要进行再生操作，一般要求读出放大器是再生放大器。</p>
+<p>刷新$\begin{cases}集中式刷新\分散式刷新\异步式刷新\end{cases}$</p>
+<p>刷新均为<strong>按行刷新</strong>。</p>
+<ul>
+<li><p>集中式刷新</p>
+<p>将刷新工作集中在一段时间内一次完成。会有“死区”产生。</p>
+<p>计算刷新时间时，每个最大刷新间隔内共有$n*t$的时间用来刷新，n指存储体行数，t指刷新一次的时间。</p>
+</li>
+<li><p>分散式刷新</p>
+<p>将刷新分散到每个存取周期完成。存在重复刷新的情况，降低运行效率。</p>
+<p>计算刷新时间时，相当于存储周期翻倍（新周期内一个周期用来存取，一个周期用来刷新）。</p>
+</li>
+<li><p>异步式刷新</p>
+<p>将每行的刷新平均到一个最大刷新周期间隔内完成，使得一个间隔内，每行有且仅有一次刷新。</p>
+<p>计算刷新时间时，直接用最大刷新周期间隔÷存储体行数。</p>
+</li>
+</ul>
+<p>DAM采用双译码结构，行列地址分时使用一组地址引脚，同时引入行地址选通信号$\overline{RAS}$和列地址选通信号$\overline{CAS}$。</p>
+<p>DRAM读写时序：①提供行地址👉②$\overline{RAS}$有效👉③提供列地址👉④$\overline{CAS}$有效👉⑤在这之前读写使能信号有效👉⑥输出使能有效</p>
+<h2 id="4-只读存储器和闪速存储器"><a href="#4-只读存储器和闪速存储器" class="headerlink" title="4. 只读存储器和闪速存储器"></a>4. 只读存储器和闪速存储器</h2><p>ROM的主要用途是实现了软件固化。</p>
+<p>ROM分类$\begin{cases}MROM掩模式ROM\PROM可编程ROM\EPROM紫外线擦除可编程ROM：浮栅有电荷“0”，无电荷“1”\E^2PROM电可擦除可编程ROM\end{cases}$</p>
+<p>闪存：类似$E^2PROM$，速度快、成本低、容量大、功耗低、可在联机状态下擦除改写。</p>
+<h2 id="5-存储容量的扩展及其与CPU的连接"><a href="#5-存储容量的扩展及其与CPU的连接" class="headerlink" title="5. 存储容量的扩展及其与CPU的连接"></a>5. 存储容量的扩展及其与CPU的连接</h2><p>$\begin{cases}字长不够：位扩展\容量不够：字扩展\都不够：字位扩展\end{cases}$</p>
+<ul>
+<li><p>位扩展</p>
+<p>各个存储器芯片的地址线、片选线、读写控制线分别按同名端并连起来，每个芯片的数据线分别引出作为整个存储器的数据线的一部分。</p>
+</li>
+<li><p>字扩展</p>
+<p>各个存储器芯片的数据线、读写控制线分别并联，存储器地址线分为高位和地位，低位直接与各芯片的地址引脚相连，高位输入到片选译码器产生个芯片的片选信号。</p>
+</li>
+<li><p>字位扩展</p>
+<p>综合上述两种方法进行扩展。</p>
+</li>
+</ul>
+<p>DRAM和SRAM扩展区别</p>
+<ul>
+<li>DRAM地址线采取多路复用技术，需要动态存储控制器DRAMC提供。</li>
+<li>DRAM不设片选引脚，用行地址选通信号代替。</li>
+<li>DRAM需要定时刷新</li>
+</ul>
+<p>DRAMC包括：</p>
+<ul>
+<li>刷新地址计数器</li>
+<li>地址多路选择器</li>
+<li>刷新定时器</li>
+<li>仲裁电路</li>
+<li>定时发声器</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -278,7 +548,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
+      <meta itemprop="name" content="第七天堂">
     </span>
 
     
@@ -506,7 +776,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
+      <meta itemprop="name" content="第七天堂">
     </span>
 
     
@@ -791,7 +1061,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
+      <meta itemprop="name" content="第七天堂">
     </span>
 
     
@@ -869,7 +1139,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  549
+                  1.9k
                 </span>
               
 
@@ -885,7 +1155,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  6
                 </span>
               
             </div>
@@ -908,7 +1178,7 @@
       
         
           
-            <h1 id="网络分层"><a href="#网络分层" class="headerlink" title="网络分层"></a>网络分层</h1><h2 id="分层思想"><a href="#分层思想" class="headerlink" title="分层思想"></a>分层思想</h2><p>每一层的目的都是向他的上一层提供服务。</p>
+            <h1 id="一、网络分层"><a href="#一、网络分层" class="headerlink" title="一、网络分层"></a>一、网络分层</h1><h2 id="1-分层思想"><a href="#1-分层思想" class="headerlink" title="1. 分层思想"></a>1. 分层思想</h2><p>每一层的目的都是向他的上一层提供服务。</p>
 <p>$模板\begin{cases}①分层\②每层提供的服务\end{cases}$</p>
 <p>$实例\begin{cases}①层与模板的对应关系\②每层协议\end{cases}$</p>
 <p>分层思想的优势：</p>
@@ -919,20 +1189,24 @@
 <li>易于实现和维护</li>
 <li>能促进标准化工作</li>
 </ul>
-<p>接口用于定义下层向上层提供的原语操作和服务。</p>
-<p><strong>网络体系结构</strong>：层+协议的集合</p>
-<p>协议栈：为实现某一特定功能的相关协议集合。</p>
-<h2 id="实体和协议"><a href="#实体和协议" class="headerlink" title="实体和协议"></a>实体和协议</h2><p><strong>实体</strong>：层中的活动元素，包括软件和硬件。</p>
+<p><strong>接口</strong>：用于定义下层向上层提供的<strong>原语操作</strong>和<strong>服务</strong>。</p>
+<p><strong>网络体系结构</strong>：网络分层+协议的集合</p>
+<p><strong>协议栈</strong>：为实现某一特定功能的相关协议集合。</p>
+<h2 id="2-实体和协议"><a href="#2-实体和协议" class="headerlink" title="2. 实体和协议"></a>2. 实体和协议</h2><p><strong>实体</strong>：层中的活动元素，包括软件和硬件。</p>
 <p><strong>对等实体</strong>：<strong>不同</strong>机器（发送端与接收端）里处于<strong>同一层次</strong>的实体。对等实体利用协议通信。</p>
-<p>不同网络层次中的实体实现的功能互不相同。</p>
+<p>只有<strong>物理媒介</strong>执行的是真正的物理通信，对等实体间执行的都是虚拟通信。</p>
+<p>不同网络层次中的实体实现的功能<strong>互不相同</strong>。</p>
+<p>协议实现的细节和接口的描述不是体系结构的内容。</p>
 <p><strong>网络协议</strong>：为网络执行数据交换而建立的规则、标准或约定。包含三个要素：语法、语义、同步。</p>
 <ul>
 <li>语法：传输信息应遵循的数据结构形式。</li>
 <li>语义：对各个协议元素含义的解释。</li>
 <li>同步：规定实体之间通信操作执行的顺序。</li>
 </ul>
-<h2 id="接口和服务"><a href="#接口和服务" class="headerlink" title="接口和服务"></a>接口和服务</h2><p>服务是在服务访问点（SAP)提供给上层使用的。</p>
-<h2 id="数据单元"><a href="#数据单元" class="headerlink" title="数据单元"></a>数据单元</h2><p>数据单元：网络中信息传送的单位。</p>
+<h2 id="3-接口和服务"><a href="#3-接口和服务" class="headerlink" title="3. 接口和服务"></a>3. 接口和服务</h2><p>每一层的功能都是为他的上层提供服务的。功能$\neq$服务，服务是上层能看到的部分。</p>
+<p>服务是在<strong>服务访问点（SAP）</strong>提供给上层使用的。</p>
+<p>SAP总是属于下层的，即（n+1）层的IDU经过（n）层的SAP进入到（n）层。</p>
+<h2 id="4-数据单元"><a href="#4-数据单元" class="headerlink" title="4. 数据单元"></a>4. 数据单元</h2><p>数据单元：网络中信息传送的单位。</p>
 <p>对等实体在<strong>协议</strong>下传送数据单元。</p>
 <p>相邻层实体按<strong>服务</strong>传送数据单元。</p>
 <p>$\begin{cases}协议数据单元PDU\接口数据单元IDU\服务数据单元SDU\end{cases}$</p>
@@ -955,6 +1229,66 @@
 <p>PDU经过SAP时可能会分成多个IDU经过。</p>
 </li>
 </ol>
+<h2 id="5-面向连接服务和无连接服务"><a href="#5-面向连接服务和无连接服务" class="headerlink" title="5. 面向连接服务和无连接服务"></a>5. 面向连接服务和无连接服务</h2><p>从数据通信的关联角度看，下层向上层提供的服务分成两大类，<strong>面向连接服务</strong>和<strong>无连接服务</strong>。</p>
+<h3 id="a-面向连接服务"><a href="#a-面向连接服务" class="headerlink" title="a. 面向连接服务"></a>a. 面向连接服务</h3><p>面向连接服务必须先<strong>建立连接</strong>再传输数据，具有<strong>连接建立、数据传输、连接释放</strong>三个阶段。</p>
+<p>数据传输是按顺序传输的，易控制。</p>
+<p>面向连接服务的保障强于无连接的。</p>
+<h3 id="b-无连接服务"><a href="#b-无连接服务" class="headerlink" title="b. 无连接服务"></a>b. 无连接服务</h3><p>两个实体通信前无需预先建立连接，通信时不要求两个实体同时处于活跃状态。</p>
+<p>无连接服务方便灵活，但不能防止数据丢失、重复、乱序。</p>
+<p>$\begin{cases}面向连接服务适合在一定期间内向同一目的地发送多个数据的情形\无连接服务适合传输少量数据的情形\end{cases}$</p>
+<p>无论那种服务，都<strong>不能</strong>保证数据传输的可靠性。</p>
+<p>面向连接的可靠性服务$\begin{cases}消息流：保持应用的边界\字节流：没有消息边界\……\end{cases}$</p>
+<h2 id="6-服务原语"><a href="#6-服务原语" class="headerlink" title="6. 服务原语"></a>6. 服务原语</h2><p>服务在形式上是由一组服务原语来描述的。</p>
+<p>服务原语只是概念性的功能描述，对于具体实现不作规定。</p>
+<p>​        $\boxed{n+1}$</p>
+<p>$\stackrel{请求、响应}{\downarrow}\quad\stackrel{指示、证实}{\uparrow}$</p>
+<p>​            $\boxed{n}$</p>
+<p>根据服务使用的服务原语类型，可将服务划分成<strong>有证实的</strong>和<strong>无证实的</strong>。</p>
+<p>一种服务是否是证实的并非绝对，它依赖于网络层次提供的服务质量需求。</p>
+<p>是否提供证实与最终结果是否是用户所期待的<strong>无关</strong>😂。</p>
+<h2 id="7-服务和协议间关系"><a href="#7-服务和协议间关系" class="headerlink" title="7. 服务和协议间关系"></a>7. 服务和协议间关系</h2><ul>
+<li><p>服务只定义接口不涉及具体实现</p>
+</li>
+<li><p>协议定义具体规则</p>
+</li>
+<li><p>实体利用协议实现服务定义的接口</p>
+</li>
+</ul>
+<p>服务涉及上下相邻层间接口，协议涉及不同机器上对等实体间发送的数据分组。</p>
+<h1 id="二、网络参考模型"><a href="#二、网络参考模型" class="headerlink" title="二、网络参考模型"></a>二、网络参考模型</h1><h2 id="1-OSI参考模型"><a href="#1-OSI参考模型" class="headerlink" title="1. OSI参考模型"></a>1. OSI参考模型</h2><p>OSI参考模型本身并不是一个真正的网络体系结构，它只给出了每层应该实现的功能。</p>
+<h3 id="a-物理层"><a href="#a-物理层" class="headerlink" title="a. 物理层"></a>a. 物理层</h3><p>在通信信道上透明地传输比特流。</p>
+<p>物理层是一个逻辑概念，并不包含具体的物理介质。物理传输介质在物理层的下面，只有他们才进行了真正的物理传输。</p>
+<h3 id="b-数据链路层"><a href="#b-数据链路层" class="headerlink" title="b. 数据链路层"></a>b. 数据链路层</h3><p>在物理线路上提供可靠的数据传输，使之对网络层呈现一条无错的线路。将原始的传输设施转换成一条逻辑的传输线路。</p>
+<p>转换方法：数据分装成数据帧</p>
+<p>任务$\begin{cases}寻址\链路管理\差错控制\流量控制\begin{cases}传输速率控制\缓存控制\end{cases}\成帧、帧同步\end{cases}$</p>
+<h3 id="c-网络层"><a href="#c-网络层" class="headerlink" title="c. 网络层"></a>c. 网络层</h3><p>在源节点和目的节点间建立、维护、终止网络连接。控制通信子网的运行过程。</p>
+<p>关键：如何将分组从源节点<strong>路由</strong>到目的节点。</p>
+<p>任务$\begin{cases}统一编址\路由选择\拥塞控制\网络互连\end{cases}$</p>
+<h3 id="d-传输层"><a href="#d-传输层" class="headerlink" title="d. 传输层"></a>d. 传输层</h3><p>为源主机到目的主机提供可靠、满足服务质量要求的数据传输服务。</p>
+<p>传输层是真正<strong>端到端</strong>的层次。1-3层是<strong>点到点</strong>的（协议存在于每台机器与他的直接邻居之间），4-7是<strong>端到端</strong>的（协议存在于源主机和目的主机之间）。</p>
+<p>任务$\begin{cases}屏蔽通信子网的实现\弥补要求的差异\提供进程级的访问（端口）\end{cases}$</p>
+<h3 id="e-会话层"><a href="#e-会话层" class="headerlink" title="e. 会话层"></a>e. 会话层</h3><p>建立、引导、释放会话连接。</p>
+<p>同步。</p>
+<h3 id="f-表示层"><a href="#f-表示层" class="headerlink" title="f. 表示层"></a>f. 表示层</h3><p>对源端内部数据结构进行编码，形成适合网络传输的数据流，到目的端进行解码，形成目标端用户所要求的格式。</p>
+<h3 id="g-应用层"><a href="#g-应用层" class="headerlink" title="g. 应用层"></a>g. 应用层</h3><p>为用户提供网络资源的访问服务。</p>
+<h2 id="2-TCP-IP参考模型"><a href="#2-TCP-IP参考模型" class="headerlink" title="2. TCP/IP参考模型"></a>2. TCP/IP参考模型</h2><p>按需定制。</p>
+<h3 id="a-网络接口层"><a href="#a-网络接口层" class="headerlink" title="a. 网络接口层"></a>a. 网络接口层</h3><p>对应<strong>物理层</strong>和<strong>数据链路层</strong></p>
+<p>没有定义具体的网络接口层协议，严格来说不是一个层次，只是一个接口。</p>
+<h3 id="b-网际层"><a href="#b-网际层" class="headerlink" title="b. 网际层"></a>b. 网际层</h3><p>核心：IP协议</p>
+<p>控制通信子网提供<strong>点到点</strong>的IP包传送服务。</p>
+<p>无连接、不可靠但尽力而为的数据报传输服务。</p>
+<h3 id="c-传输层"><a href="#c-传输层" class="headerlink" title="c. 传输层"></a>c. 传输层</h3><p>核心：TCP、UDP协议</p>
+<p>提供端到端的数据传输服务。</p>
+<p>TCP提供可靠的端到端的传输服务。</p>
+<p>UDP提供不可靠的端到端的传输服务。</p>
+<h3 id="d-应用层"><a href="#d-应用层" class="headerlink" title="d. 应用层"></a>d. 应用层</h3><p>提供面向用户的网络服务，对应OSI的高三层。</p>
+<h1 id="三、五层网络参考模型"><a href="#三、五层网络参考模型" class="headerlink" title="三、五层网络参考模型"></a>三、五层网络参考模型</h1><ul>
+<li>应用层</li>
+<li>传输层</li>
+<li>网络层</li>
+<li>数据链路层</li>
+<li>物理层</li>
+</ul>
 
           
         
@@ -1020,7 +1354,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
+      <meta itemprop="name" content="第七天堂">
     </span>
 
     
@@ -1275,7 +1609,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
+      <meta itemprop="name" content="第七天堂">
     </span>
 
     
@@ -1487,7 +1821,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
+      <meta itemprop="name" content="第七天堂">
     </span>
 
     
@@ -1722,7 +2056,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
+      <meta itemprop="name" content="第七天堂">
     </span>
 
     
@@ -1887,7 +2221,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
+      <meta itemprop="name" content="第七天堂">
     </span>
 
     
@@ -2109,7 +2443,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
+      <meta itemprop="name" content="第七天堂">
     </span>
 
     
@@ -2273,268 +2607,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://syj2908.github.io/2020/07/13/%E7%BC%96%E8%AF%91%E5%99%A8%E5%AE%9E%E9%AA%8C%E9%9A%8F%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="syj">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/pic2.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syj's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/13/%E7%BC%96%E8%AF%91%E5%99%A8%E5%AE%9E%E9%AA%8C%E9%9A%8F%E8%AE%B0/" itemprop="url">编译器实验随记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-13T21:34:52+08:00">
-                2020-07-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E7%BC%96%E8%AF%91/" itemprop="url" rel="index">
-                    <span itemprop="name">形式语言与编译</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.7k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>写在前面🔈</p>
-<p>因为疫情影响，整个学期的编译器都压在了小学期。更尴尬的是，即使去了实验室，那里的老师也不会给出更多的指导😅，因此后来干脆呆在宿舍自己折腾，从激活wsl，一直到第一次看到语法分析的结果输出到终端，其间踩过的大大小小的坑🕳不计其数，几次让我产生了放弃的念头😣。究其原因，还是觉得是一次性接受的新事物太多，导致难以很快上手。现在我把在学习过程中遇到的问题及解决方案罗列如下，希望能帮到陌生人和以后的自己🙌。</p>
-<hr>
-<h1 id="Q：win10系统，但是无法开启wsl？"><a href="#Q：win10系统，但是无法开启wsl？" class="headerlink" title="Q：win10系统，但是无法开启wsl？"></a>Q：win10系统，但是无法开启wsl？</h1><p>以前为了防止出现意外，关闭了win10的自动更新功能，导致win10版本过旧不支持wsl。</p>
-<p>更新系统💻就好了。</p>
-<h1 id="Q：wsl无法运行32bit程序，报错cannot-execute-binary-file-Exec-format-error？"><a href="#Q：wsl无法运行32bit程序，报错cannot-execute-binary-file-Exec-format-error？" class="headerlink" title="Q：wsl无法运行32bit程序，报错cannot execute binary file: Exec format error？"></a>Q：wsl无法运行32bit程序，报错cannot execute binary file: Exec format error？</h1><p>需要安装qemu&amp;binfmt</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install qemu-user-static</span><br><span class="line">sudo update-binfmts --install i386 &#x2F;usr&#x2F;bin&#x2F;qemu-i386-static --magic &#39;\x7fELF\x01\x01\x01\x03\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x03\x00\x01\x00\x00\x00&#39; --mask &#39;\xff\xff\xff\xff\xff\xff\xff\xfc\xff\xff\xff\xff\xff\xff\xff\xff\xf8\xff\xff\xff\xff\xff\xff\xff&#39;</span><br></pre></td></tr></table></figure>
-
-<p>然后每次重启wsl后都要重新开启qemu，也就是每次重启后要输入这句命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service binfmt-support start</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://www.cnblogs.com/TatuCz/p/10330820.html" target="_blank" rel="noopener">这里是参考资料来源</a></p>
-<h1 id="Q：如何在wsl与windows间复制粘贴东西？"><a href="#Q：如何在wsl与windows间复制粘贴东西？" class="headerlink" title="Q：如何在wsl与windows间复制粘贴东西？"></a>Q：如何在wsl与windows间复制粘贴东西？</h1><p>终端输入命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install yum</span><br><span class="line">sudo apt install gpm</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>ubuntu 控制台内部</strong><br>复制：按住鼠标左键选择，松开选定<br>粘贴：点击鼠标右键</li>
-<li><strong>win 复制到 ubuntu 粘贴</strong><br>win 复制：<code>Ctrl</code> +<code>C</code><br>ubuntu粘贴：点击鼠标右键</li>
-<li><strong>ubuntu 复制到 win 粘贴</strong><br>ubuntu 复制：<code>Shift</code> + <code>Ctrl</code>+<code>C</code><br>win 粘贴：<code>Ctrl</code> + <code>V</code></li>
-</ul>
-<p><a href="https://blog.csdn.net/CCCCJY/article/details/106549179" target="_blank" rel="noopener">这里是参考资料来源</a></p>
-<h1 id="Q：如何切换root用户登录？"><a href="#Q：如何切换root用户登录？" class="headerlink" title="Q：如何切换root用户登录？"></a>Q：如何切换root用户登录？</h1><p>wsl和我一般用的虚拟机还不太一样，一般的虚拟机配置的时候都会让你设置一个root用户，但是wsl一上手就只给了你一个普通账户，想拿<code>su -</code>登录root，就会让你输入root密码，但咱也没设过root密码啊！那怎么改root密码？网上给的方案是在root用户权限下就可以随意更改任何一个用户（包括root自己）的密码。</p>
-<p><strong>这不套娃呢么！</strong></p>
-<p>继续在网上找，终于找到了一个靠谱儿的方案，现在记录如下。</p>
-<ul>
-<li><p>先以管理员权限打开windows powershell</p>
-<p><code>win</code>+<code>R</code>打开运行框，输入<code>powershell</code>，打开后再输入<code>Start-Process powershell -Verb runAs</code>获取管理员权限。</p>
-</li>
-<li><p>然后修改登录wsl时的默认用户</p>
-<p>powershell里输入<code>ubuntu config --default-user root</code></p>
-<p>这样你下次登录wsl时，默认的用户就是root了，然后就能随意修改任意用户的密码了😏。</p>
-<p>root下修改密码的指令</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd --修改root密码</span><br><span class="line">sudo passwd syj --修改syj用户的密码</span><br></pre></td></tr></table></figure>
-
-<p>​        普通用户只能改自己的密码，指令为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://blog.csdn.net/qq_29384639/article/details/90518491" target="_blank" rel="noopener">这里是参考：修改wsl默认登录用户为root</a></p>
-<p><a href="https://blog.csdn.net/hyfstyle/article/details/90904992" target="_blank" rel="noopener">这里是参考：Linux修改用户密码</a></p>
-<h1 id="Q：为什么我apt-get-install下不下来软件包啊？"><a href="#Q：为什么我apt-get-install下不下来软件包啊？" class="headerlink" title="Q：为什么我apt-get install下不下来软件包啊？"></a>Q：为什么我apt-get install下不下来软件包啊？</h1><p>想要运行make，就需要g++，但是wsl默认是没有g++的，需要自己下。</p>
-<p>这时候，问题就来了，每次用<code>sudo  apt-get install g++</code>时，他都会报错说缺少依赖的软件包，但想要下载被依赖的软件包时，又会说软件包缺少被依赖的被依赖的软件包……真是子子孙孙无穷尽也👨‍👩‍👧‍👦👨‍👩‍👧‍👦👨‍👩‍👧‍👦。</p>
-<p>网上查原因，最后才发现是源有问题。</p>
-<p><strong>一定要换对应版本的源！！！</strong></p>
-<p><strong>一定要换对应版本的源！！！</strong></p>
-<p><strong>一定要换对应版本的源！！！</strong></p>
-<p>选择一个<em>合适自己Linux</em>的源至关重要，以前的我总是随便在网上搜一个源就给粘上去了，导致了各种奇奇怪怪的问题💦。</p>
-<p>那什么叫<em>合适自己Linux</em>的源呢，说白了就是<strong>Linux版本号</strong>一定要对应。</p>
-<p>查看自己Linux内核版本号</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsb_release -a</span><br></pre></td></tr></table></figure>
-
-<p>输出结果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">No LSB modules are available.</span><br><span class="line">Distributor ID: Ubuntu</span><br><span class="line">Description:    Ubuntu 20.04 LTS</span><br><span class="line">Release:        20.04</span><br><span class="line">Codename:       focal</span><br></pre></td></tr></table></figure>
-
-<p>这里20.04就是版本号，对应的昵称是<em>focal</em>，那我们一定就要换适配20.04版本的源，比如下面这个，阿里云源。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-updates main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-proposed main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-backports main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-updates main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-proposed main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
-
-<p>具体步骤，先备份原来的源并另存为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -v &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.backup</span><br></pre></td></tr></table></figure>
-
-<p>然后修改源的文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br></pre></td></tr></table></figure>
-
-<p>然后把找到的源粘过去就好了，vim的具体操作以后有时间再整理👻。</p>
-<p>改好源后更新下软件列表和软件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
-
-<p>重新install g++，顺利下载，问题完美解决🆒~</p>
-<p><a href="https://blog.csdn.net/qq_37960324/article/details/84644479" target="_blank" rel="noopener">这里是参考：查看Linux版本号</a></p>
-<p><a href="https://www.cnblogs.com/spqin/p/13285622.html" target="_blank" rel="noopener">这里是参考：Ubuntu20.04换源</a></p>
-<h1 id="Q：写好了分析器，用make命令会报很多错❌？"><a href="#Q：写好了分析器，用make命令会报很多错❌？" class="headerlink" title="Q：写好了分析器，用make命令会报很多错❌？"></a>Q：写好了分析器，用make命令会报很多错❌？</h1><p>检查当前目录下makefile文件是否正确，文件开头需要修改cool文件位置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 将CLASSDIR设置成你电脑上cool项目所在的位置</span><br><span class="line">CLASSDIR&#x3D; &#x2F;mnt&#x2F;e&#x2F;Desktop&#x2F;作业&#x2F;编译原理&#x2F;实验&#x2F;编译第一次实验&#x2F;cool&#x2F;cool --这是我的cool的文位置，因此粘贴到这里就好了</span><br></pre></td></tr></table></figure>
-
-<p>我遇见的一般都是这个问题，还遇到过g++没装的问题（解决方案见前面），细心改改就好了。</p>
-<hr>
-<p>以上基本就是我在做编译器实验过程中遇到的值得记录的问题。</p>
-<p>说实话，这个实验本身并不难（其实代码部分他基本上都给你写好了，你所要做的就是用他的代码make出一个分析器而已），比较消耗时间的反而是环境的搭建与配置。由于Linux系统也是刚刚开始系统学习，因此要一步步亲自配好环境也是要花一番功夫的。</p>
-<p>总的来说，这么多小时砸了进去，编译器部分的知识没学多少，但对Linux的一些常见问题和对应的解决方案倒是有些了解了，也算没白费功夫吧💕。</p>
-<p>完结撒花🎉🎉🎉</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-    
-    </div>
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2579,7 +2651,7 @@
                 alt="syj" />
             
               <p class="site-author-name" itemprop="name">syj</p>
-              <p class="site-description motion-element" itemprop="description">大二CSer的学习 摸鱼记录:)</p>
+              <p class="site-description motion-element" itemprop="description">大三CSer陈旧、飘着灰尘的书堆</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -2589,7 +2661,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2661,7 +2733,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共14.4k字</span>
+  <span class="post-count">博客全站共17.6k字</span>
 </div>
 
 <br>
